@@ -33,8 +33,8 @@
   <meta name="twitter:image"
     content="https://ssclassicmoulds.com/public/product/product-mould-and-croc-luxury-display.jpeg">
 
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%233ECFA0'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='28' fill='%23080B10'%3ESS%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="public/favicon.png">
+  <link rel="apple-touch-icon" href="public/favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -262,8 +262,15 @@
     }
 
     /* Hide Google Translate bar */
-    .goog-te-banner-frame, .skiptranslate, #goog-gt-tt { display: none !important; }
-    body { top: 0 !important; }
+    .goog-te-banner-frame,
+    .skiptranslate,
+    #goog-gt-tt {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
 
     /* ===== RESET ===== */
     *,
@@ -438,10 +445,10 @@
     }
 
     .loader-logo {
-      width: 64px;
-      height: 64px;
-      border-radius: var(--radius-md);
-      margin-bottom: var(--space-md);
+      width: clamp(150px, 30vw, 660px);
+      height: auto;
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-lg);
       object-fit: cover;
     }
 
@@ -632,49 +639,129 @@
     }
 
     /* Language selector */
-    .lang-wrap { position: relative; }
-    .lang-btn {
-      width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      background: var(--bg-card); border: 1px solid var(--border-default); color: var(--text-secondary);
-      font-family: var(--font-ui); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;
-      transition: all 0.3s var(--ease-spring); position: relative; cursor: pointer;
+    .lang-wrap {
+      position: relative;
     }
-    .lang-btn:hover { border-color: var(--mint); color: var(--mint); }
+
+    .lang-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-default);
+      color: var(--text-secondary);
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: all 0.3s var(--ease-spring);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .lang-btn:hover {
+      border-color: var(--mint);
+      color: var(--mint);
+    }
+
     .lang-dropdown {
-      position: absolute; top: calc(100% + 8px); right: 0; min-width: 160px;
-      background: var(--bg-card); border: 1px solid var(--border-default);
-      border-radius: var(--radius-md); padding: 6px 0;
-      box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden;
-      transform: translateY(-8px); transition: all 0.25s var(--ease-out-expo);
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 160px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-md);
+      padding: 6px 0;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.25s var(--ease-out-expo);
       z-index: 10001;
     }
-    .lang-wrap.open .lang-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+
+    .lang-wrap.open .lang-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
     .lang-option {
-      display: flex; align-items: center; gap: 10px; width: 100%;
-      padding: 10px 16px; font-family: var(--font-ui); font-size: var(--text-xs);
-      font-weight: 500; letter-spacing: 0.05em; color: var(--text-secondary);
-      background: none; text-align: left; transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 10px 16px;
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+      background: none;
+      text-align: left;
+      transition: all 0.2s;
     }
-    .lang-option:hover { background: var(--mint-glow); color: var(--mint); }
-    .lang-option .lang-name { flex: 1; }
-    .lang-btn .fi { font-size: 1rem; }
-    .lang-option .fi { font-size: 1.1rem; width: 22px; }
+
+    .lang-option:hover {
+      background: var(--mint-glow);
+      color: var(--mint);
+    }
+
+    .lang-option .lang-name {
+      flex: 1;
+    }
+
+    .lang-btn .fi {
+      font-size: 1rem;
+    }
+
+    .lang-option .fi {
+      font-size: 1.1rem;
+      width: 22px;
+    }
+
     .lang-loading {
-      position: absolute; top: calc(100% + 8px); right: 0;
-      display: none; align-items: center; gap: 8px;
-      padding: 10px 18px; background: var(--bg-card);
-      border: 1px solid var(--border-accent); border-radius: var(--radius-pill);
-      box-shadow: var(--shadow-lg); z-index: 10001;
-      font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 600;
-      letter-spacing: 0.08em; color: var(--mint);
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-lg);
+      z-index: 10001;
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--mint);
     }
-    .lang-loading.active { display: flex; }
+
+    .lang-loading.active {
+      display: flex;
+    }
+
     .lang-spinner {
-      width: 14px; height: 14px; border: 2px solid var(--border-default);
-      border-top-color: var(--mint); border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--border-default);
+      border-top-color: var(--mint);
+      border-radius: 50%;
       animation: langSpin 0.6s linear infinite;
     }
-    @keyframes langSpin { to { transform: rotate(360deg); } }
+
+    @keyframes langSpin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
     /* Theme toggle */
     .theme-toggle {
@@ -991,8 +1078,15 @@
       opacity: var(--glow-opacity, 0.04);
       will-change: transform;
     }
-    [data-theme="dark"] { --glow-opacity: 0.035; }
-    [data-theme="light"] { --glow-opacity: 0.06; }
+
+    [data-theme="dark"] {
+      --glow-opacity: 0.035;
+    }
+
+    [data-theme="light"] {
+      --glow-opacity: 0.06;
+    }
+
     .glow-mint-tl {
       width: clamp(400px, 50vw, 800px);
       height: clamp(400px, 50vw, 800px);
@@ -1000,6 +1094,7 @@
       left: -10%;
       background: radial-gradient(circle, var(--mint) 0%, transparent 70%);
     }
+
     .glow-copper-br {
       width: clamp(350px, 45vw, 700px);
       height: clamp(350px, 45vw, 700px);
@@ -1007,6 +1102,7 @@
       right: -8%;
       background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
     }
+
     .glow-mint-cta {
       width: clamp(300px, 40vw, 600px);
       height: clamp(300px, 40vw, 600px);
@@ -1015,8 +1111,11 @@
       background: radial-gradient(circle, var(--mint) 0%, transparent 70%);
       opacity: calc(var(--glow-opacity) * 0.7);
     }
+
     @media (prefers-reduced-motion: reduce) {
-      .ambient-glow { display: none; }
+      .ambient-glow {
+        display: none;
+      }
     }
 
     .section-header {
@@ -2974,7 +3073,7 @@
 
   <!-- Loader -->
   <div id="loader">
-    <img src="public/logo.jpeg" alt="SS Classic Logo" class="loader-logo">
+    <img src="public/logo.png" alt="SS Classic Logo" class="loader-logo">
     <div class="loader-brand" id="loaderBrand"></div>
     <div class="loader-tagline">Manufacturers of All Kinds of Footwear Mould</div>
     <div class="loader-bar">
@@ -2986,7 +3085,7 @@
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#hero-scroll-container" class="nav-logo">
-        <img src="public/logo.jpeg" alt="SS Classic" class="nav-logo-img">
+        <img src="public/favicon.png" alt="SS Classic" class="nav-logo-img">
         <div class="nav-logo-text">S.S. Classic<small>Mould &amp; Dies</small></div>
       </a>
       <div class="nav-links">
@@ -2999,15 +3098,23 @@
         <div class="lang-wrap" id="langWrap">
           <button class="lang-btn" id="langBtn" aria-label="Change language"><span class="fi fi-gb"></span></button>
           <div class="lang-dropdown" id="langDropdown">
-            <button class="lang-option" data-lang="en" data-flag="gb"><span class="fi fi-gb"></span><span class="lang-name">English</span></button>
+            <button class="lang-option" data-lang="en" data-flag="gb"><span class="fi fi-gb"></span><span
+                class="lang-name">English</span></button>
 
-            <button class="lang-option" data-lang="ar" data-flag="sa"><span class="fi fi-sa"></span><span class="lang-name">Arabic</span></button>
-            <button class="lang-option" data-lang="zh-CN" data-flag="cn"><span class="fi fi-cn"></span><span class="lang-name">Chinese</span></button>
-            <button class="lang-option" data-lang="es" data-flag="es"><span class="fi fi-es"></span><span class="lang-name">Spanish</span></button>
-            <button class="lang-option" data-lang="fr" data-flag="fr"><span class="fi fi-fr"></span><span class="lang-name">French</span></button>
-            <button class="lang-option" data-lang="fil" data-flag="ph"><span class="fi fi-ph"></span><span class="lang-name">Filipino</span></button>
-            <button class="lang-option" data-lang="id" data-flag="id"><span class="fi fi-id"></span><span class="lang-name">Indonesian</span></button>
-            <button class="lang-option" data-lang="bn" data-flag="bd"><span class="fi fi-bd"></span><span class="lang-name">Bangla</span></button>
+            <button class="lang-option" data-lang="ar" data-flag="sa"><span class="fi fi-sa"></span><span
+                class="lang-name">Arabic</span></button>
+            <button class="lang-option" data-lang="zh-CN" data-flag="cn"><span class="fi fi-cn"></span><span
+                class="lang-name">Chinese</span></button>
+            <button class="lang-option" data-lang="es" data-flag="es"><span class="fi fi-es"></span><span
+                class="lang-name">Spanish</span></button>
+            <button class="lang-option" data-lang="fr" data-flag="fr"><span class="fi fi-fr"></span><span
+                class="lang-name">French</span></button>
+            <button class="lang-option" data-lang="fil" data-flag="ph"><span class="fi fi-ph"></span><span
+                class="lang-name">Filipino</span></button>
+            <button class="lang-option" data-lang="id" data-flag="id"><span class="fi fi-id"></span><span
+                class="lang-name">Indonesian</span></button>
+            <button class="lang-option" data-lang="bn" data-flag="bd"><span class="fi fi-bd"></span><span
+                class="lang-name">Bangla</span></button>
           </div>
           <div class="lang-loading" id="langLoading">
             <div class="lang-spinner"></div>
@@ -3082,7 +3189,7 @@
           <p>Mould &amp; Dies</p>
         </div>
         <div class="hero-watermark-cover">
-          <img src="public/logo.jpeg" alt="SS">
+          <img src="public/logo.png" alt="SS">
           <span>S.S. Classic</span>
         </div>
         <div class="scroll-hint" id="scrollHint">
@@ -3211,7 +3318,8 @@
         <div class="section-header">
           <div class="section-label reveal">About Us</div>
           <div class="section-title reveal reveal-delay-1">Built on <span class="accent">Precision</span>, Driven by
-            <span class="gold">Trust</span></div>
+            <span class="gold">Trust</span>
+          </div>
           <div class="section-subtitle reveal reveal-delay-2">Two decades of engineering footwear moulds that set
             industry benchmarks.</div>
         </div>
@@ -3234,7 +3342,8 @@
               footwear brands.</p>
             <p>Every mould that leaves our workshop carries our commitment to <strong>dimensional accuracy</strong>,
               <strong>surface finish quality</strong>, and <strong>long-lasting durability</strong>. We don't just
-              manufacture moulds — we engineer solutions that help our clients scale production with confidence.</p>
+              manufacture moulds — we engineer solutions that help our clients scale production with confidence.
+            </p>
           </div>
           <div class="bento-card bento-card-image reveal reveal-delay-2">
             <img src="public/craftsmanship/manufacturing-green-croc-from-mould.jpeg"
@@ -3476,70 +3585,78 @@
         </div>
 
         <div class="bento-gallery" id="bentoGallery">
-          <div role="button" tabindex="0" aria-label="View: Orange crocs beach lifestyle" class="bento-gallery-item reveal" data-category="lifestyle"
+          <div role="button" tabindex="0" aria-label="View: Orange crocs beach lifestyle"
+            class="bento-gallery-item reveal" data-category="lifestyle"
             data-src="public/lifestyle/crocs-orange-beach-lifestyle.jpeg">
-        <img src="public/lifestyle/crocs-orange-beach-lifestyle.jpeg" alt="Orange crocs beach lifestyle"
+            <img src="public/lifestyle/crocs-orange-beach-lifestyle.jpeg" alt="Orange crocs beach lifestyle"
               loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Beach Ready</div>
               <div class="bento-caption">Lightweight EVA clog finish</div>
             </div>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Hot steel mould pouring" class="bento-gallery-item reveal reveal-delay-1" data-category="craftsmanship"
+          <div role="button" tabindex="0" aria-label="View: Hot steel mould pouring"
+            class="bento-gallery-item reveal reveal-delay-1" data-category="craftsmanship"
             data-src="public/craftsmanship/hero-mould-hot-steel.jpeg">
-        <img src="public/craftsmanship/hero-mould-hot-steel.jpeg" alt="Hot steel mould pouring" loading="lazy">
+            <img src="public/craftsmanship/hero-mould-hot-steel.jpeg" alt="Hot steel mould pouring" loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Raw Craft</div>
               <div class="bento-caption">High-temperature mould process</div>
             </div>
             <span class="gallery-tag">Production Ready</span>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Orange crocs floating on dark" class="bento-gallery-item reveal reveal-delay-2" data-category="product"
+          <div role="button" tabindex="0" aria-label="View: Orange crocs floating on dark"
+            class="bento-gallery-item reveal reveal-delay-2" data-category="product"
             data-src="public/product/crocs-orange-floating-dark.jpeg">
-        <img src="public/product/crocs-orange-floating-dark.jpeg" alt="Orange crocs floating on dark"
+            <img src="public/product/crocs-orange-floating-dark.jpeg" alt="Orange crocs floating on dark"
               loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Product Shot</div>
               <div class="bento-caption">Studio-quality finish output</div>
             </div>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Hot sole mould smoking" class="bento-gallery-item reveal reveal-delay-1" data-category="craftsmanship"
+          <div role="button" tabindex="0" aria-label="View: Hot sole mould smoking"
+            class="bento-gallery-item reveal reveal-delay-1" data-category="craftsmanship"
             data-src="public/craftsmanship/mould-hot-sole-smoking.jpeg">
-        <img src="public/craftsmanship/mould-hot-sole-smoking.jpeg" alt="Hot sole mould smoking" loading="lazy">
+            <img src="public/craftsmanship/mould-hot-sole-smoking.jpeg" alt="Hot sole mould smoking" loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Fresh from the Press</div>
               <div class="bento-caption">Sole ejection at 180&deg;C</div>
             </div>
             <span class="gallery-tag">High Gloss Finish</span>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Yellow crocs beach splash" class="bento-gallery-item reveal reveal-delay-2" data-category="lifestyle"
+          <div role="button" tabindex="0" aria-label="View: Yellow crocs beach splash"
+            class="bento-gallery-item reveal reveal-delay-2" data-category="lifestyle"
             data-src="public/lifestyle/crocs-yellow-beach-splash.jpeg">
-        <img src="public/lifestyle/crocs-yellow-beach-splash.jpeg" alt="Yellow crocs beach splash" loading="lazy">
+            <img src="public/lifestyle/crocs-yellow-beach-splash.jpeg" alt="Yellow crocs beach splash" loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Summer Vibes</div>
               <div class="bento-caption">Water-resistant EVA compound</div>
             </div>
           </div>
-          <div role="button" tabindex="0" aria-label="View: White crocs poolside" class="bento-gallery-item reveal reveal-delay-3" data-category="lifestyle"
+          <div role="button" tabindex="0" aria-label="View: White crocs poolside"
+            class="bento-gallery-item reveal reveal-delay-3" data-category="lifestyle"
             data-src="public/lifestyle/crocs-white-poolside-lifestyle.jpeg">
-        <img src="public/lifestyle/crocs-white-poolside-lifestyle.jpeg" alt="White crocs poolside" loading="lazy">
+            <img src="public/lifestyle/crocs-white-poolside-lifestyle.jpeg" alt="White crocs poolside" loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Poolside</div>
               <div class="bento-caption">Non-slip sole tread design</div>
             </div>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Yellow crocs splash closeup" class="bento-gallery-item reveal reveal-delay-4" data-category="lifestyle"
+          <div role="button" tabindex="0" aria-label="View: Yellow crocs splash closeup"
+            class="bento-gallery-item reveal reveal-delay-4" data-category="lifestyle"
             data-src="public/lifestyle/crocs-yellow-beach-splash-2.jpeg">
-        <img src="public/lifestyle/crocs-yellow-beach-splash-2.jpeg" alt="Yellow crocs splash closeup"
+            <img src="public/lifestyle/crocs-yellow-beach-splash-2.jpeg" alt="Yellow crocs splash closeup"
               loading="lazy">
             <div class="bento-info">
               <div class="bento-title">In Action</div>
               <div class="bento-caption">Durability meets lifestyle</div>
             </div>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Sole tread pattern macro closeup" class="bento-gallery-item reveal" data-category="craftsmanship"
+          <div role="button" tabindex="0" aria-label="View: Sole tread pattern macro closeup"
+            class="bento-gallery-item reveal" data-category="craftsmanship"
             data-src="public/craftsmanship/sole-tread-closeup-dark.jpeg">
-        <img src="public/craftsmanship/sole-tread-closeup-dark.jpeg" alt="Sole tread pattern macro closeup"
+            <img src="public/craftsmanship/sole-tread-closeup-dark.jpeg" alt="Sole tread pattern macro closeup"
               loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Tread Detail</div>
@@ -3547,9 +3664,10 @@
             </div>
             <span class="gallery-tag">Precision CNC</span>
           </div>
-          <div role="button" tabindex="0" aria-label="View: CNC mould machining golden light" class="bento-gallery-item reveal reveal-delay-1" data-category="craftsmanship"
+          <div role="button" tabindex="0" aria-label="View: CNC mould machining golden light"
+            class="bento-gallery-item reveal reveal-delay-1" data-category="craftsmanship"
             data-src="public/craftsmanship/mould-cnc-machining-golden.jpeg">
-        <img src="public/craftsmanship/mould-cnc-machining-golden.jpeg" alt="CNC mould machining golden light"
+            <img src="public/craftsmanship/mould-cnc-machining-golden.jpeg" alt="CNC mould machining golden light"
               loading="lazy">
             <div class="bento-info">
               <div class="bento-title">CNC Precision</div>
@@ -3557,34 +3675,37 @@
             </div>
             <span class="gallery-tag">Multi-Cavity</span>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Five pairs of crocs arranged in hemisphere" class="bento-gallery-item reveal reveal-delay-2" data-category="product"
+          <div role="button" tabindex="0" aria-label="View: Five pairs of crocs arranged in hemisphere"
+            class="bento-gallery-item reveal reveal-delay-2" data-category="product"
             data-src="public/product/crocs-5-colors-hemisphere.jpeg">
-        <img src="public/product/crocs-5-colors-hemisphere.jpeg" alt="Five pairs of crocs arranged in hemisphere"
+            <img src="public/product/crocs-5-colors-hemisphere.jpeg" alt="Five pairs of crocs arranged in hemisphere"
               loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Every Color, One Mould</div>
               <div class="bento-caption">Scalable design consistency across colorways</div>
             </div>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Navy blue clog on dark background" class="bento-gallery-item reveal reveal-delay-3" data-category="product"
+          <div role="button" tabindex="0" aria-label="View: Navy blue clog on dark background"
+            class="bento-gallery-item reveal reveal-delay-3" data-category="product"
             data-src="public/product/navy-clog-dark-hero.jpeg">
-        <img src="public/product/navy-clog-dark-hero.jpeg" alt="Navy blue clog on dark background" loading="lazy">
+            <img src="public/product/navy-clog-dark-hero.jpeg" alt="Navy blue clog on dark background" loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Navy Stealth</div>
               <div class="bento-caption">Matte EVA finish in deep navy</div>
             </div>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Three clogs on minimalist shelf" class="bento-gallery-item reveal reveal-delay-4" data-category="product"
+          <div role="button" tabindex="0" aria-label="View: Three clogs on minimalist shelf"
+            class="bento-gallery-item reveal reveal-delay-4" data-category="product"
             data-src="public/product/trio-shelf-editorial.jpeg">
-        <img src="public/product/trio-shelf-editorial.jpeg" alt="Three clogs on minimalist shelf" loading="lazy">
+            <img src="public/product/trio-shelf-editorial.jpeg" alt="Three clogs on minimalist shelf" loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Editorial Display</div>
               <div class="bento-caption">Black, white &amp; olive — retail ready</div>
             </div>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Pink kids clog with unicorn charms on dark background" class="bento-gallery-item reveal" data-category="kids"
-            data-src="public/kids/kids-pink-unicorn-dark.jpeg">
-        <img src="public/kids/kids-pink-unicorn-dark.jpeg"
+          <div role="button" tabindex="0" aria-label="View: Pink kids clog with unicorn charms on dark background"
+            class="bento-gallery-item reveal" data-category="kids" data-src="public/kids/kids-pink-unicorn-dark.jpeg">
+            <img src="public/kids/kids-pink-unicorn-dark.jpeg"
               alt="Pink kids clog with unicorn charms on dark background" loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Unicorn Dreams</div>
@@ -3592,27 +3713,30 @@
             </div>
             <span class="bento-tag">Kids Collection</span>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Toddler wearing blue clogs on playground" class="bento-gallery-item reveal reveal-delay-1" data-category="kids"
+          <div role="button" tabindex="0" aria-label="View: Toddler wearing blue clogs on playground"
+            class="bento-gallery-item reveal reveal-delay-1" data-category="kids"
             data-src="public/kids/kids-blue-playground-lifestyle.jpeg">
-        <img src="public/kids/kids-blue-playground-lifestyle.jpeg" alt="Toddler wearing blue clogs on playground"
+            <img src="public/kids/kids-blue-playground-lifestyle.jpeg" alt="Toddler wearing blue clogs on playground"
               loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Playground Ready</div>
               <div class="bento-caption">Durable EVA for active kids</div>
             </div>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Mint kids clogs flat lay with toys and crayons" class="bento-gallery-item reveal reveal-delay-3" data-category="kids"
+          <div role="button" tabindex="0" aria-label="View: Mint kids clogs flat lay with toys and crayons"
+            class="bento-gallery-item reveal reveal-delay-3" data-category="kids"
             data-src="public/kids/kids-mint-flatlay-toys.jpeg">
-        <img src="public/kids/kids-mint-flatlay-toys.jpeg" alt="Mint kids clogs flat lay with toys and crayons"
+            <img src="public/kids/kids-mint-flatlay-toys.jpeg" alt="Mint kids clogs flat lay with toys and crayons"
               loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Tiny Adventures</div>
               <div class="bento-caption">Lightweight EVA for little explorers</div>
             </div>
           </div>
-          <div role="button" tabindex="0" aria-label="View: Three character themed kids clogs - red pink green" class="bento-gallery-item reveal reveal-delay-4" data-category="kids"
+          <div role="button" tabindex="0" aria-label="View: Three character themed kids clogs - red pink green"
+            class="bento-gallery-item reveal reveal-delay-4" data-category="kids"
             data-src="public/kids/kids-trio-character-themed.jpeg">
-        <img src="public/kids/kids-trio-character-themed.jpeg"
+            <img src="public/kids/kids-trio-character-themed.jpeg"
               alt="Three character themed kids clogs - red pink green" loading="lazy">
             <div class="bento-info">
               <div class="bento-title">Character Collection</div>
@@ -3706,7 +3830,8 @@
         <div class="section-header">
           <div class="section-label reveal">Industries Served</div>
           <div class="section-title reveal reveal-delay-1">Moulds for Every <span class="accent">Market</span></div>
-          <div class="section-subtitle reveal reveal-delay-2">Trusted by manufacturers across India &amp; worldwide in the footwear
+          <div class="section-subtitle reveal reveal-delay-2">Trusted by manufacturers across India &amp; worldwide in
+            the footwear
             segments.</div>
         </div>
         <div class="bento-grid industries-bento">
@@ -4054,8 +4179,7 @@
             </div>
           </div>
           <div class="reveal-right">
-            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit"
-              method="POST">
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="dd697d67-f1b2-498f-ad3c-542cf75ee795">
               <input type="hidden" name="subject" value="New Enquiry — SS Classic Website">
               <input type="hidden" name="from_name" value="SS Classic Website">
@@ -4209,7 +4333,7 @@
       }
 
       /* Safety: force dismiss after 8 seconds no matter what */
-      setTimeout(function() { doHideLoader(); }, 8000);
+      setTimeout(function () { doHideLoader(); }, 8000);
 
       /* ===== SCROLLYTELLING HERO CANVAS ===== */
       var TOTAL_FRAMES = 241;
@@ -4390,8 +4514,8 @@
       var langBtn = document.getElementById('langBtn');
       var langLoading = document.getElementById('langLoading');
 
-      langBtn.addEventListener('click', function() { langWrap.classList.toggle('open'); });
-      document.addEventListener('click', function(e) { if (!langWrap.contains(e.target)) langWrap.classList.remove('open'); });
+      langBtn.addEventListener('click', function () { langWrap.classList.toggle('open'); });
+      document.addEventListener('click', function (e) { if (!langWrap.contains(e.target)) langWrap.classList.remove('open'); });
 
       // Set Google Translate cookie and reload — most reliable method
       function setGTLang(lang) {
@@ -4407,15 +4531,15 @@
         var s = document.createElement('script');
         s.src = 'https://translate.google.com/translate_a/element.js?cb=_gtCb';
         document.head.appendChild(s);
-        window._gtCb = function() {
+        window._gtCb = function () {
           new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'gt-container');
           gtReady = true;
           cb();
         };
       }
 
-      document.querySelectorAll('.lang-option').forEach(function(opt) {
-        opt.addEventListener('click', function() {
+      document.querySelectorAll('.lang-option').forEach(function (opt) {
+        opt.addEventListener('click', function () {
           var lang = opt.getAttribute('data-lang');
           var flag = opt.getAttribute('data-flag');
           langBtn.innerHTML = '<span class="fi fi-' + flag + '"></span>';
@@ -4432,16 +4556,16 @@
 
           // Set cookie first, then load GT
           setGTLang(lang);
-          ensureGT(function() {
+          ensureGT(function () {
             // Force the select to change
             var tries = 0;
-            var iv = setInterval(function() {
+            var iv = setInterval(function () {
               var sel = document.querySelector('.goog-te-combo');
               if (sel) {
                 sel.value = lang;
                 sel.dispatchEvent(new Event('change'));
                 clearInterval(iv);
-                setTimeout(function() { langLoading.classList.remove('active'); }, 800);
+                setTimeout(function () { langLoading.classList.remove('active'); }, 800);
               }
               if (++tries > 30) {
                 clearInterval(iv);
@@ -4456,7 +4580,7 @@
       // Restore flag on page load if translated
       var savedLang = (document.cookie.match(/googtrans=\/en\/(\w+)/) || [])[1];
       if (savedLang) {
-        var flagMap = { hi:'in', ar:'sa', 'zh-CN':'cn', es:'es', fr:'fr', fil:'ph', id:'id' };
+        var flagMap = { hi: 'in', ar: 'sa', 'zh-CN': 'cn', es: 'es', fr: 'fr', fil: 'ph', id: 'id' };
         var f = flagMap[savedLang];
         if (f) langBtn.innerHTML = '<span class="fi fi-' + f + '"></span>';
       }
@@ -4649,20 +4773,20 @@
           method: 'POST',
           body: formData
         })
-        .then(function(res) { return res.json(); })
-        .then(function(data) {
-          if (data.success) {
-            form.style.display = 'none';
-            success.classList.add('show');
-          } else {
-            btn.textContent = 'Failed — Try Again';
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (data.success) {
+              form.style.display = 'none';
+              success.classList.add('show');
+            } else {
+              btn.textContent = 'Failed — Try Again';
+              btn.disabled = false;
+            }
+          })
+          .catch(function () {
+            btn.textContent = 'Network Error — Try Again';
             btn.disabled = false;
-          }
-        })
-        .catch(function() {
-          btn.textContent = 'Network Error — Try Again';
-          btn.disabled = false;
-        });
+          });
       });
 
       /* Form reset */
