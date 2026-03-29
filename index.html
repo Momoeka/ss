@@ -485,7 +485,7 @@
       width: 0%;
       height: 100%;
       background: var(--mint);
-      animation: loaderFill 1.8s 0.4s var(--ease-out-expo) forwards;
+      transition: width 0.1s linear;
     }
 
     @keyframes loaderReveal {
@@ -500,11 +500,6 @@
       }
     }
 
-    @keyframes loaderFill {
-      to {
-        width: 100%;
-      }
-    }
 
     /* ===== NAVBAR ===== */
     #navbar {
@@ -3012,6 +3007,7 @@
             <button class="lang-option" data-lang="fr" data-flag="fr"><span class="fi fi-fr"></span><span class="lang-name">French</span></button>
             <button class="lang-option" data-lang="fil" data-flag="ph"><span class="fi fi-ph"></span><span class="lang-name">Filipino</span></button>
             <button class="lang-option" data-lang="id" data-flag="id"><span class="fi fi-id"></span><span class="lang-name">Indonesian</span></button>
+            <button class="lang-option" data-lang="bn" data-flag="bd"><span class="fi fi-bd"></span><span class="lang-name">Bangla</span></button>
           </div>
           <div class="lang-loading" id="langLoading">
             <div class="lang-spinner"></div>
@@ -4173,16 +4169,47 @@
       });
       document.body.style.overflow = 'hidden';
 
-      var loaderTimeout = setTimeout(function () {
-        document.getElementById('loader').classList.add('hidden');
-        document.body.style.overflow = '';
-      }, 6000);
+      /* Loader: minimum 2 seconds with progress bar, stays longer if frames still loading */
+      var loaderMinTime = Date.now() + 2000;
+      var framesReady = false;
+      var loaderBar = document.querySelector('.loader-bar-fill');
+      var loaderProgress = 0;
+      var loaderTarget = 30; // fake target before frames load
+
+      // Animate progress bar smoothly
+      function updateLoaderBar() {
+        if (loaderProgress >= 100) return;
+        // Move fast to 70% (fake), then slow until frames ready, then jump to 100%
+        if (!framesReady && loaderProgress < 70) {
+          loaderProgress += (70 - loaderProgress) * 0.04;
+        } else if (!framesReady) {
+          loaderProgress += (90 - loaderProgress) * 0.005;
+        } else {
+          loaderProgress += (100 - loaderProgress) * 0.15;
+        }
+        if (loaderBar) loaderBar.style.width = Math.min(loaderProgress, 100) + '%';
+        if (loaderProgress < 99.5) requestAnimationFrame(updateLoaderBar);
+      }
+      requestAnimationFrame(updateLoaderBar);
 
       function dismissLoader() {
-        clearTimeout(loaderTimeout);
+        framesReady = true;
+        loaderProgress = 85; // jump near end
+        var remaining = loaderMinTime - Date.now();
+        if (remaining > 0) {
+          setTimeout(doHideLoader, remaining);
+        } else {
+          doHideLoader();
+        }
+      }
+
+      function doHideLoader() {
         document.getElementById('loader').classList.add('hidden');
         document.body.style.overflow = '';
       }
+
+      /* Safety: force dismiss after 8 seconds no matter what */
+      setTimeout(function() { doHideLoader(); }, 8000);
 
       /* ===== SCROLLYTELLING HERO CANVAS ===== */
       var TOTAL_FRAMES = 241;
