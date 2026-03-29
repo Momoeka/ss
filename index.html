@@ -4254,12 +4254,15 @@
         setTimeout(function () { for (var i = 0; i < TOTAL_FRAMES; i++) { loadFrame(i); } }, 500);
       }
 
+      // CDN base — served from GitHub raw
+      var CDN_BASE = 'https://raw.githubusercontent.com/Momoeka/ss/main/';
+
       function preloadFrames() {
         if (getIsPortrait()) {
-          loadFrameSet('public/frames-mobile/', mobileFrames, true);
+          loadFrameSet(CDN_BASE + 'public/frames-mobile/', mobileFrames, true);
           frames = mobileFrames;
         } else {
-          loadFrameSet('public/frames/', desktopFrames, false);
+          loadFrameSet(CDN_BASE + 'public/frames/', desktopFrames, false);
           frames = desktopFrames;
         }
       }
@@ -4269,9 +4272,9 @@
         if (nowPortrait !== isPortrait) {
           isPortrait = nowPortrait;
           if (isPortrait && mobileFrames.length === 0) {
-            loadFrameSet('public/frames-mobile/', mobileFrames, true);
+            loadFrameSet(CDN_BASE + 'public/frames-mobile/', mobileFrames, true);
           } else if (!isPortrait && desktopFrames.length === 0) {
-            loadFrameSet('public/frames/', desktopFrames, false);
+            loadFrameSet(CDN_BASE + 'public/frames/', desktopFrames, false);
           }
           frames = isPortrait ? mobileFrames : desktopFrames;
           drawFrame(currentFrame);
@@ -4296,13 +4299,15 @@
         index = Math.max(0, Math.min(index, TOTAL_FRAMES - 1));
         var img = frames[index];
         if (img && img.complete && img.naturalWidth > 0) {
-          // Use CSS pixel dimensions (ctx.scale handles DPR)
           var cw = heroWrap.clientWidth, ch = heroWrap.clientHeight;
           var iw = img.naturalWidth, ih = img.naturalHeight;
-          var scale = Math.max(cw / iw, ch / ih);
+          var isPortrait = cw < ch;
+          // Portrait (mobile): contain — show full image, black bars on sides
+          // Landscape (desktop): cover — fill entire screen
+          var scale = isPortrait ? Math.min(cw / iw, ch / ih) : Math.max(cw / iw, ch / ih);
           var dw = iw * scale, dh = ih * scale;
           var dx = (cw - dw) / 2, dy = (ch - dh) / 2;
-          ctx.fillStyle = '#0A0E14';
+          ctx.fillStyle = '#0B0F12';
           ctx.fillRect(0, 0, cw, ch);
           ctx.drawImage(img, dx, dy, dw, dh);
           currentFrame = index;

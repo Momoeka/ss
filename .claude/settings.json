@@ -48,7 +48,8 @@
       "Bash(ls c:/ss_crocs/public/*.jpeg)",
       "Bash(ls /c/ss_crocs/public/*/)",
       "Read(//dev/**)",
-      "Bash(node -e \":*)"
+      "Bash(node -e \":*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://raw.githubusercontent.com/Momoeka/ss/main/public/frames/ezgif-frame-001.jpg\")"
     ]
   }
 }
