@@ -853,15 +853,60 @@
       visibility: visible;
     }
 
+    .mobile-menu-close {
+      position: absolute; top: 20px; right: 20px;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--bg-surface); color: var(--text-primary);
+      font-size: 1.5rem; display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border-default);
+      transition: all 0.3s var(--ease-spring);
+    }
+    .mobile-menu-close:hover { background: var(--mint); color: var(--text-on-accent); }
+
     .mobile-menu a {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 5vh, 3rem);
+      font-size: clamp(1.3rem, 3.5vh, 1.8rem);
       letter-spacing: 0.1em;
       color: var(--text-primary);
     }
 
     .mobile-menu a:hover {
       color: var(--mint);
+    }
+
+    .mobile-menu-lang {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 24px;
+      margin-top: 8px;
+    }
+
+    .mobile-menu-lang button {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-default);
+      cursor: pointer;
+      transition: all 0.3s var(--ease-spring);
+    }
+
+    .mobile-menu-lang button:hover,
+    .mobile-menu-lang button.active-lang {
+      border-color: var(--mint);
+      background: var(--mint-glow);
+    }
+
+    .mobile-menu-lang button .fi {
+      font-size: 1.1rem;
     }
 
     /* ===== SCROLLYTELLING HERO ===== */
@@ -937,30 +982,28 @@
 
     .hero-watermark-cover {
       position: absolute;
-      bottom: 16px;
-      right: 16px;
+      bottom: 0;
+      right: 0;
       z-index: 3;
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      background: rgba(8, 11, 16, 0.85);
-      border: 1px solid rgba(62, 207, 160, 0.15);
-      border-radius: var(--radius-pill);
-      backdrop-filter: blur(8px);
+      gap: 10px;
+      padding: 10px 20px;
+      background: rgba(11, 15, 18, 0.95);
+      border-top-left-radius: var(--radius-md);
     }
 
     .hero-watermark-cover img {
-      width: 22px;
-      height: 22px;
-      border-radius: 4px;
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
       object-fit: cover;
     }
 
     .hero-watermark-cover span {
       font-family: var(--font-ui);
-      font-size: 0.65rem;
-      font-weight: 600;
+      font-size: 0.75rem;
+      font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--mint);
@@ -2857,33 +2900,43 @@
 
       .mobile-menu {
         display: flex;
+        gap: clamp(12px, 2.5vh, 20px);
+        padding: calc(var(--nav-height) + 16px) 24px 24px;
+        overflow-y: auto;
       }
 
       .sticky-cta {
         display: flex;
       }
 
+      /* Prevent sticky CTA overlap with WhatsApp and back-to-top */
       .whatsapp-btn {
         bottom: 76px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
       }
 
       .back-to-top {
-        bottom: 140px;
-        right: clamp(20px, 3vw, 32px);
+        bottom: 132px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
       }
 
       #hero-scroll-container {
         height: 300vh;
       }
 
+      /* Watermark and scroll hint — prevent overlap */
       .hero-watermark-cover {
-        bottom: 56px;
-        right: 12px;
-        padding: 4px 10px;
+        bottom: 0;
+        right: 0;
+        padding: 8px 16px;
       }
 
       .hero-watermark-cover span {
-        font-size: 0.55rem;
+        font-size: 0.65rem;
       }
 
       .scroll-hint {
@@ -2895,23 +2948,54 @@
         height: 24px;
       }
 
-      .hero-bento {
-        grid-template-columns: 1fr;
-        padding: var(--space-lg) 0;
+      /* Section titles — smaller on mobile */
+      .section-title {
+        font-size: clamp(1.6rem, 6vw, 2.4rem);
       }
 
-      .stats-bento {
-        grid-template-columns: 1fr 1fr;
+      .bento-card-title {
+        font-size: clamp(1.4rem, 5vw, 2rem);
       }
 
-      .about-bento {
-        grid-template-columns: 1fr;
+      /* Gallery — uniform 1:1 squares, 2 per row */
+      .bento-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
       }
 
-      .pillars-bento {
-        grid-template-columns: 1fr;
+      .bento-gallery > * {
+        aspect-ratio: 1 / 1;
       }
 
+      .gallery-featured {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .gallery-featured .bento-title {
+        font-size: var(--text-sm);
+      }
+
+      /* Gallery filter buttons — tappable */
+      .gallery-filters {
+        gap: 6px;
+      }
+
+      .gallery-filter {
+        padding: 10px 16px;
+        font-size: 0.65rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      /* Tag strip pills */
+      .tag-chip {
+        padding: 6px 14px;
+        font-size: 0.65rem;
+      }
+
+      /* Product cards — 1 column */
       .products-bento {
         grid-template-columns: 1fr;
       }
@@ -2926,23 +3010,12 @@
         height: auto;
       }
 
-      .bento-gallery {
-        grid-template-columns: 1fr 1fr;
+      /* Pillar cards — 1 column */
+      .pillars-bento {
+        grid-template-columns: 1fr;
       }
 
-      .gallery-filters {
-        gap: 6px;
-      }
-
-      .gallery-filter {
-        padding: 6px 14px;
-        font-size: 0.6rem;
-      }
-
-      .lightbox-nav {
-        display: none;
-      }
-
+      /* Process timeline */
       .process-bento {
         grid-template-columns: 1fr;
       }
@@ -2952,34 +3025,95 @@
         min-height: 220px;
       }
 
-      .industries-bento {
-        grid-template-columns: 1fr;
+      /* FAQ — full width */
+      .faq-list {
+        max-width: 100%;
       }
 
-      .quality-bento {
-        grid-template-columns: 1fr;
+      .faq-question {
+        font-size: var(--text-base);
+        padding: var(--space-md) 0;
+        min-height: 48px;
       }
 
+      /* Capabilities — horizontal scroll on mobile */
       .capabilities-bento {
         grid-template-columns: 1fr;
       }
 
+      .capability-spec {
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      /* Specs tables scroll horizontally if needed */
+      .specs-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Contact form — no overflow */
       .contact-grid {
         grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: var(--space-lg);
       }
 
       .form-row {
         grid-template-columns: 1fr;
       }
 
+      /* Footer — stack properly */
       .footer-inner {
         grid-template-columns: 1fr;
+        gap: var(--space-lg);
       }
 
       .footer-bottom {
         flex-direction: column;
         gap: 8px;
         text-align: center;
+      }
+
+      /* CTA banner */
+      .cta-banner-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-main {
+        padding: var(--space-xl) var(--space-lg);
+      }
+
+      /* About bento */
+      .about-bento {
+        grid-template-columns: 1fr;
+      }
+
+      /* Industries */
+      .industries-bento {
+        grid-template-columns: 1fr;
+      }
+
+      /* Quality */
+      .quality-bento {
+        grid-template-columns: 1fr;
+      }
+
+      /* Stats */
+      .stats-bento {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-bento {
+        grid-template-columns: 1fr;
+        padding: var(--space-lg) 0;
+      }
+
+      .lightbox-nav {
+        display: none;
       }
     }
 
@@ -2988,8 +3122,13 @@
         grid-template-columns: 1fr;
       }
 
-      .bento-gallery {
-        grid-template-columns: 1fr;
+      .section-title {
+        font-size: clamp(1.4rem, 5.5vw, 2rem);
+      }
+
+      .sticky-cta a {
+        font-size: 0.65rem;
+        padding: 10px 12px;
       }
     }
 
@@ -3167,14 +3306,25 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
     <a href="#about">About</a>
     <a href="#products">Products</a>
     <a href="#showcase">Showcase</a>
     <a href="#process">Process</a>
     <a href="#industries">Industries</a>
     <a href="#contact">Contact</a>
-    <a href="#contact" class="btn-cta btn-cta-lg" style="margin-top:16px;">Get Quote</a>
+    <div class="mobile-menu-lang" id="mobileLangRow">
+      <button data-lang="en" data-flag="gb" aria-label="English"><span class="fi fi-gb"></span></button>
+      <button data-lang="ar" data-flag="sa" aria-label="Arabic"><span class="fi fi-sa"></span></button>
+      <button data-lang="zh-CN" data-flag="cn" aria-label="Chinese"><span class="fi fi-cn"></span></button>
+      <button data-lang="es" data-flag="es" aria-label="Spanish"><span class="fi fi-es"></span></button>
+      <button data-lang="fr" data-flag="fr" aria-label="French"><span class="fi fi-fr"></span></button>
+      <button data-lang="fil" data-flag="ph" aria-label="Filipino"><span class="fi fi-ph"></span></button>
+      <button data-lang="id" data-flag="id" aria-label="Indonesian"><span class="fi fi-id"></span></button>
+      <button data-lang="bn" data-flag="bd" aria-label="Bangla"><span class="fi fi-bd"></span></button>
+    </div>
+    <a href="#contact" class="btn-cta btn-cta-lg" style="margin-top:8px;">Get Quote</a>
   </div>
 
   <main aria-label="Main content">
@@ -3189,7 +3339,7 @@
           <p>Mould &amp; Dies</p>
         </div>
         <div class="hero-watermark-cover">
-          <img src="public/logo.png" alt="SS">
+          <img src="public/favicon.png" alt="SS">
           <span>S.S. Classic</span>
         </div>
         <div class="scroll-hint" id="scrollHint">
@@ -4587,7 +4737,7 @@
       // Restore flag on page load if translated
       var savedLang = (document.cookie.match(/googtrans=\/en\/(\w+)/) || [])[1];
       if (savedLang) {
-        var flagMap = { hi: 'in', ar: 'sa', 'zh-CN': 'cn', es: 'es', fr: 'fr', fil: 'ph', id: 'id' };
+        var flagMap = { hi: 'in', ar: 'sa', 'zh-CN': 'cn', es: 'es', fr: 'fr', fil: 'ph', id: 'id', bn: 'bd' };
         var f = flagMap[savedLang];
         if (f) langBtn.innerHTML = '<span class="fi fi-' + f + '"></span>';
       }
@@ -4608,7 +4758,47 @@
       }
       hb.addEventListener('click', toggleMenu);
       mm.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+      document.getElementById('mobileMenuClose').addEventListener('click', closeMenu);
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && mm.classList.contains('open')) closeMenu(); });
+
+      /* ===== MOBILE LANGUAGE BUTTONS ===== */
+      document.querySelectorAll('#mobileLangRow button').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var lang = btn.getAttribute('data-lang');
+          var flag = btn.getAttribute('data-flag');
+          // Update desktop lang button too
+          langBtn.innerHTML = '<span class="fi fi-' + flag + '"></span>';
+          // Highlight active
+          document.querySelectorAll('#mobileLangRow button').forEach(function (b) { b.classList.remove('active-lang'); });
+          btn.classList.add('active-lang');
+          closeMenu();
+
+          if (lang === 'en') {
+            document.cookie = 'googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            document.cookie = 'googtrans=;path=/;domain=' + location.hostname + ';expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            location.reload();
+            return;
+          }
+          setGTLang(lang);
+          langLoading.classList.add('active');
+          ensureGT(function () {
+            var tries = 0;
+            var iv = setInterval(function () {
+              var sel = document.querySelector('.goog-te-combo');
+              if (sel) { sel.value = lang; sel.dispatchEvent(new Event('change')); clearInterval(iv); setTimeout(function () { langLoading.classList.remove('active'); }, 800); }
+              if (++tries > 30) { clearInterval(iv); location.reload(); }
+            }, 150);
+          });
+        });
+      });
+
+      // Highlight active lang on mobile too
+      if (savedLang) {
+        var mobileFlagMap = { en: 'gb', hi: 'in', ar: 'sa', 'zh-CN': 'cn', es: 'es', fr: 'fr', fil: 'ph', id: 'id', bn: 'bd' };
+        document.querySelectorAll('#mobileLangRow button').forEach(function (b) {
+          if (b.getAttribute('data-lang') === savedLang) b.classList.add('active-lang');
+        });
+      }
       /* Close mobile menu on resize past breakpoint */
       var wasMobile = window.innerWidth <= 768;
       window.addEventListener('resize', function () {

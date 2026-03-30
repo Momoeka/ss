@@ -51,6 +51,9 @@
       "Bash(node -e \":*)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://raw.githubusercontent.com/Momoeka/ss/main/public/frames/ezgif-frame-001.jpg\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://raw.githubusercontent.com/Momoeka/ss/main/public/frames-mobile/ezgif-frame-001.jpg\")"
+    ],
+    "additionalDirectories": [
+      "c:\\ss_crocs"
     ]
   }
 }
