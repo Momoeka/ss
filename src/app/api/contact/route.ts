@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 
+// Required for Cloudflare Pages — Workers runtime, not Node.
+export const runtime = "edge";
+
 // Google Form bridge — submissions land in the linked Google Sheet.
 const GOOGLE_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSewZGfIWzHAksm4u3e0l0Rav6PxiRmu-ezuieH1pWlO8GYvUw/formResponse";

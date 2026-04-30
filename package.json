@@ -6,19 +6,27 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages@1",
+    "pages:dev": "npx wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat"
   },
   "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@types/three": "^0.160.0",
     "next": "14.2.35",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "three": "^0.160.1"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.35",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vercel": "^52.2.1"
   }
 }
