@@ -1,0 +1,1243 @@
+  <a href="#hero-scroll-container" class="skip-link">Skip to content</a>
+  <div id="gt-container" style="position:absolute;top:-9999px;left:-9999px;"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div id="scrollProgress"></div>
+  <div class="ambient-glow glow-mint-tl" aria-hidden="true"></div>
+  <div class="ambient-glow glow-copper-br" aria-hidden="true"></div>
+  <div class="ambient-glow glow-mint-cta" aria-hidden="true"></div>
+
+  <noscript>
+    <style>
+      #loader {
+        display: none !important
+      }
+
+      body {
+        overflow: auto !important
+      }
+    </style>
+  </noscript>
+
+  <!-- Loader -->
+  <div id="loader">
+    <img src="/favicon.png" alt="SS Classic Logo" class="loader-logo">
+    <div class="loader-brand" id="loaderBrand"></div>
+    <div class="loader-tagline">Manufacturers of All Kinds of Footwear Mould</div>
+    <div class="loader-bar">
+      <div class="loader-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero-scroll-container" class="nav-logo">
+        <img src="/favicon.png" alt="SS Classic" class="nav-logo-img">
+        <div class="nav-logo-text">S.S. Classic<small>Mould &amp; Dies</small></div>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#process">Process</a>
+        <a href="#industries">Industries</a>
+        <a href="#contact">Contact</a>
+        <div class="lang-wrap" id="langWrap">
+          <button class="lang-btn" id="langBtn" aria-label="Change language"><span class="fi fi-gb"></span></button>
+          <div class="lang-dropdown" id="langDropdown">
+            <button class="lang-option" data-lang="en" data-flag="gb"><span class="fi fi-gb"></span><span
+                class="lang-name">English</span></button>
+
+            <button class="lang-option" data-lang="ar" data-flag="sa"><span class="fi fi-sa"></span><span
+                class="lang-name">Arabic</span></button>
+            <button class="lang-option" data-lang="zh-CN" data-flag="cn"><span class="fi fi-cn"></span><span
+                class="lang-name">Chinese</span></button>
+            <button class="lang-option" data-lang="es" data-flag="es"><span class="fi fi-es"></span><span
+                class="lang-name">Spanish</span></button>
+            <button class="lang-option" data-lang="fr" data-flag="fr"><span class="fi fi-fr"></span><span
+                class="lang-name">French</span></button>
+            <button class="lang-option" data-lang="fil" data-flag="ph"><span class="fi fi-ph"></span><span
+                class="lang-name">Filipino</span></button>
+            <button class="lang-option" data-lang="id" data-flag="id"><span class="fi fi-id"></span><span
+                class="lang-name">Indonesian</span></button>
+            <button class="lang-option" data-lang="bn" data-flag="bd"><span class="fi fi-bd"></span><span
+                class="lang-name">Bangla</span></button>
+          </div>
+          <div class="lang-loading" id="langLoading">
+            <div class="lang-spinner"></div>
+            <span>Translating...</span>
+          </div>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        <a href="#contact" class="btn-cta">Get Quote</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle theme" style="display:none;">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"
+          aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#showcase">Showcase</a>
+    <a href="#process">Process</a>
+    <a href="#industries">Industries</a>
+    <a href="#contact">Contact</a>
+    <div class="mobile-menu-lang" id="mobileLangRow">
+      <button data-lang="en" data-flag="gb" aria-label="English"><span class="fi fi-gb"></span></button>
+      <button data-lang="ar" data-flag="sa" aria-label="Arabic"><span class="fi fi-sa"></span></button>
+      <button data-lang="zh-CN" data-flag="cn" aria-label="Chinese"><span class="fi fi-cn"></span></button>
+      <button data-lang="es" data-flag="es" aria-label="Spanish"><span class="fi fi-es"></span></button>
+      <button data-lang="fr" data-flag="fr" aria-label="French"><span class="fi fi-fr"></span></button>
+      <button data-lang="fil" data-flag="ph" aria-label="Filipino"><span class="fi fi-ph"></span></button>
+      <button data-lang="id" data-flag="id" aria-label="Indonesian"><span class="fi fi-id"></span></button>
+      <button data-lang="bn" data-flag="bd" aria-label="Bangla"><span class="fi fi-bd"></span></button>
+    </div>
+    <a href="#contact" class="btn-cta btn-cta-lg" style="margin-top:8px;">Get Quote</a>
+  </div>
+
+  <main aria-label="Main content">
+
+    <!-- Hero — Scrollytelling Canvas -->
+    <div id="hero-scroll-container">
+      <div id="hero-canvas-wrap">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-mobile-text">
+          <div class="hero-mobile-label">Precision Since 2000</div>
+          <h1>S.S. <span style="color:var(--mint)">Classic</span></h1>
+          <p>Mould &amp; Dies</p>
+        </div>
+        <div class="hero-watermark-cover">
+          <img src="/favicon.png" alt="SS">
+          <span>S.S. Classic</span>
+        </div>
+        <div class="scroll-hint" id="scrollHint">
+          <div class="scroll-hint-line"></div>
+          Scroll to explore
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Tags Strip -->
+    <div class="tag-strip">
+      <div class="tag-strip-inner">
+        <span class="tag-chip">EVA Bond Moulds</span><span class="tag-chip">Full EVA Moulds</span><span
+          class="tag-chip">Sole Die Cuts</span><span class="tag-chip">Custom Dies</span><span
+          class="tag-chip">Crocs-Style Clogs</span><span class="tag-chip">Slipper Moulds</span><span
+          class="tag-chip">Flip-Flop Dies</span><span class="tag-chip">Sports Soles</span><span class="tag-chip">School
+          Shoes</span><span class="tag-chip">Safety Footwear</span><span class="tag-chip">Sandal Moulds</span><span
+          class="tag-chip">Injection Moulds</span><span class="tag-chip">Compression Dies</span><span
+          class="tag-chip">Multi-Cavity</span><span class="tag-chip">CNC Machined</span><span class="tag-chip">Global
+          Delivery</span><span class="tag-chip">EVA Bond Moulds</span><span class="tag-chip">Full EVA Moulds</span><span
+          class="tag-chip">Sole Die Cuts</span><span class="tag-chip">Custom Dies</span><span
+          class="tag-chip">Crocs-Style Clogs</span><span class="tag-chip">Slipper Moulds</span><span
+          class="tag-chip">Flip-Flop Dies</span><span class="tag-chip">Sports Soles</span><span class="tag-chip">School
+          Shoes</span><span class="tag-chip">Safety Footwear</span><span class="tag-chip">Sandal Moulds</span><span
+          class="tag-chip">Injection Moulds</span><span class="tag-chip">Compression Dies</span><span
+          class="tag-chip">Multi-Cavity</span><span class="tag-chip">CNC Machined</span><span class="tag-chip">Global
+          Delivery</span>
+      </div>
+    </div>
+
+    <!-- Hero Bento Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="bento-grid hero-bento">
+          <div class="bento-card bento-card-accent hero-bento-main reveal">
+            <span class="bento-tag-label">Precision Since 2000</span>
+            <div class="bento-card-title" style="font-size:var(--text-3xl);margin-bottom:var(--space-sm);">India's
+              Premier <span style="color:var(--mint)">Footwear Mould</span> Engineering Partner</div>
+            <p class="bento-card-text">From concept to production — precision-engineered EVA moulds, crocs-style dies,
+              and sole cutting tools trusted by manufacturers across India &amp; worldwide.</p>
+            <div class="hero-bento-cta">
+              <a href="#contact" class="btn-cta btn-cta-lg">Get Quote<svg width="16" height="16" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+              <a href="#products" class="btn-cta btn-cta-lg"
+                style="background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border-default);">View
+                Products</a>
+            </div>
+          </div>
+          <div class="bento-card bento-card-dark reveal reveal-delay-1"
+            style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+            <div class="bento-stat-number" data-count="25" data-suffix="+">0+</div>
+            <div class="bento-stat-label">Years of Excellence</div>
+          </div>
+          <div class="bento-card bento-card-image reveal reveal-delay-2">
+            <img src="/craftsmanship/mould-cnc-machining-golden.jpeg" alt="CNC mould machining" loading="lazy">
+            <div class="bento-image-overlay"></div>
+            <div class="bento-image-content">
+              <span
+                style="font-family:var(--font-ui);font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--mint);">CNC
+                Precision</span>
+            </div>
+          </div>
+          <div class="bento-card bento-card-gold reveal reveal-delay-3"
+            style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+            <div class="bento-stat-number" style="color:var(--gold);">&plusmn;0.05<span
+                class="bento-stat-unit">mm</span></div>
+            <div class="bento-stat-label">Tolerance Accuracy</div>
+          </div>
+          <div class="bento-card bento-card-image reveal reveal-delay-4">
+            <img src="/product/product-mould-and-croc-luxury-display.jpeg" alt="Finished mould and croc shoe"
+              loading="lazy">
+            <div class="bento-image-overlay"></div>
+            <div class="bento-image-content">
+              <span
+                style="font-family:var(--font-ui);font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);">Premium
+                Finish</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Bento -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="bento-grid stats-bento">
+          <div class="bento-card bento-card-accent stat-hero reveal">
+            <span class="bento-tag-label">Our Track Record</span>
+            <div class="bento-stat-number" style="font-size:var(--text-5xl);margin-bottom:var(--space-sm);"
+              data-count="25" data-suffix="+">0+</div>
+            <div
+              style="font-family:var(--font-display);font-size:var(--text-xl);letter-spacing:0.04em;color:var(--text-primary);margin-bottom:var(--space-xs);">
+              Years of Precision Engineering</div>
+            <p class="bento-card-text">Since 2000, manufacturing moulds that set industry benchmarks from New Delhi's
+              industrial heart.</p>
+          </div>
+          <div class="bento-card reveal reveal-delay-1"
+            style="display:flex;flex-direction:column;justify-content:center;text-align:center;">
+            <div class="bento-stat-number" data-count="50000" data-suffix="+">0+</div>
+            <div class="bento-stat-label">Moulds Delivered</div>
+          </div>
+          <div class="bento-card reveal reveal-delay-2"
+            style="display:flex;flex-direction:column;justify-content:center;text-align:center;">
+            <div class="bento-stat-number" data-count="7" data-suffix="-18">0</div>
+            <div class="bento-stat-label">Days Lead Time</div>
+          </div>
+          <div class="bento-card bento-card-dark reveal reveal-delay-3"
+            style="display:flex;flex-direction:column;justify-content:center;text-align:center;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.5"
+              stroke-linecap="round" style="margin:0 auto var(--space-sm);">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <div style="font-family:var(--font-display);font-size:var(--text-xl);letter-spacing:0.04em;">Global</div>
+            <div class="bento-stat-label">Delivery Network</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label reveal">About Us</div>
+          <div class="section-title reveal reveal-delay-1">Built on <span class="accent">Precision</span>, Driven by
+            <span class="gold">Trust</span>
+          </div>
+          <div class="section-subtitle reveal reveal-delay-2">Two decades of engineering footwear moulds that set
+            industry benchmarks.</div>
+        </div>
+
+        <div class="bento-grid about-bento">
+          <div class="bento-card bento-card-image reveal-scale">
+            <img src="/craftsmanship/mould-and-mint-croc-flatlay.jpeg"
+              alt="Aluminium mould and mint croc shoe flat lay on marble" loading="lazy">
+            <div class="bento-image-overlay"></div>
+            <div class="bento-image-content">
+              <span class="bento-tag-label bento-tag-gold">Est. 2000</span>
+              <div style="font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;letter-spacing:0.04em;">
+                Craftsmanship Meets Engineering</div>
+            </div>
+          </div>
+          <div class="bento-card about-story reveal reveal-delay-1">
+            <p>Founded by <strong>Sheikh Sikander</strong>, S.S. Classic Mould &amp; Dies has been a cornerstone of
+              India's footwear manufacturing ecosystem for over 25 years. Based in the heart of Delhi's industrial hub —
+              Mangol Puri — we specialize in precision-engineered moulds that power some of India's most recognized
+              footwear brands.</p>
+            <p>Every mould that leaves our workshop carries our commitment to <strong>dimensional accuracy</strong>,
+              <strong>surface finish quality</strong>, and <strong>long-lasting durability</strong>. We don't just
+              manufacture moulds — we engineer solutions that help our clients scale production with confidence.
+            </p>
+          </div>
+          <div class="bento-card bento-card-image reveal reveal-delay-2">
+            <img src="/craftsmanship/manufacturing-green-croc-from-mould.jpeg"
+              alt="Manufacturing croc shoe from mould" loading="lazy">
+            <div class="bento-image-overlay"></div>
+          </div>
+          <div class="bento-card bento-card-image reveal reveal-delay-3">
+            <img src="/product/factory-handshake-trust.jpeg" alt="Business handshake in mould factory"
+              loading="lazy">
+            <div class="bento-image-overlay"></div>
+            <div class="bento-image-content">
+              <span
+                style="font-family:var(--font-ui);font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);">Trusted
+                Partnerships</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metallic-divider"></div>
+
+        <!-- Why Choose Us — Pillars Bento -->
+        <div class="bento-grid pillars-bento">
+          <div class="bento-card bento-card-accent pillar-main reveal">
+            <div class="pillar-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--mint)"
+                stroke-width="2" stroke-linecap="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg></div>
+            <div class="pillar-title">Precision Engineering</div>
+            <p class="pillar-text">Micron-level accuracy in every mould cavity. Our CNC-aided tooling process ensures
+              flawless dimensional consistency across entire production runs — from the first shot to the
+              fifty-thousandth.</p>
+            <div style="display:flex;gap:var(--space-md);margin-top:var(--space-lg);">
+              <div>
+                <div style="font-family:var(--font-display);font-size:var(--text-xl);color:var(--mint);">&plusmn;0.05mm
+                </div>
+                <div class="bento-stat-label">Tolerance</div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-display);font-size:var(--text-xl);color:var(--mint);">50K+</div>
+                <div class="bento-stat-label">Cycle Life</div>
+              </div>
+            </div>
+          </div>
+          <div class="bento-card bento-card-image reveal reveal-delay-1">
+            <img src="/craftsmanship/mould-cnc-wet-closeup.jpeg" alt="CNC mould machining closeup" loading="lazy">
+            <div class="bento-image-overlay"></div>
+            <div class="bento-image-content">
+              <span
+                style="font-family:var(--font-ui);font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint);">Multi-Axis
+                CNC Machining</span>
+              <div
+                style="font-family:var(--font-display);font-size:var(--text-xl);color:#fff;letter-spacing:0.04em;margin-top:4px;">
+                Where Engineering Meets Art</div>
+            </div>
+          </div>
+          <div class="bento-card reveal reveal-delay-2">
+            <div class="pillar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--mint)"
+                stroke-width="2" stroke-linecap="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg></div>
+            <div class="pillar-title">Custom Designs</div>
+            <p class="pillar-text">Bring us your concept — we'll engineer the mould. Full custom design capability for
+              unique footwear profiles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label reveal">Our Products</div>
+          <div class="section-title reveal reveal-delay-1">Engineered for <span class="accent">Performance</span></div>
+          <div class="section-subtitle reveal reveal-delay-2">Three core product lines, each built to exacting standards
+            for the modern footwear industry.</div>
+        </div>
+        <div class="bento-grid products-bento">
+          <!-- EVA Bond Mould -->
+          <div class="bento-card reveal" style="padding:0;">
+            <div class="product-img-wrap">
+              <img src="/craftsmanship/eva-mould-multi-cavity-crocs.jpeg"
+                alt="EVA Bond Mould multi-cavity for crocs" loading="lazy">
+              <div class="product-badge">Best Seller</div>
+            </div>
+            <div class="product-body">
+              <h3>EVA Bond Mould</h3>
+              <p>High-density EVA bond moulds engineered for superior bonding, consistent cell structure, and excellent
+                compression set resistance.</p>
+              <table class="specs-table">
+                <tr>
+                  <td>Material</td>
+                  <td>Aluminium Alloy / Mild Steel</td>
+                </tr>
+                <tr>
+                  <td>Cavity</td>
+                  <td>Single / Multi-cavity</td>
+                </tr>
+                <tr>
+                  <td>Size Range</td>
+                  <td>UK 3 – UK 12</td>
+                </tr>
+                <tr>
+                  <td>Finish</td>
+                  <td>Mirror / Matte / Textured</td>
+                </tr>
+                <tr>
+                  <td>Lead Time</td>
+                  <td>7 – 12 days</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <!-- Full EVA Mould -->
+          <div class="bento-card reveal reveal-delay-1" style="padding:0;">
+            <div class="product-img-wrap">
+              <img src="/craftsmanship/eva-mould-multi-cavity-topview.jpeg"
+                alt="Full EVA Mould multi-cavity top view" loading="lazy">
+              <div class="product-badge product-badge-gold">Premium</div>
+            </div>
+            <div class="product-body">
+              <h3>Full EVA Mould</h3>
+              <p>Complete EVA injection moulds for full-shoe production — crocs-style, clogs, and lightweight casual
+                footwear with seamless finish.</p>
+              <table class="specs-table">
+                <tr>
+                  <td>Material</td>
+                  <td>6082 Grade Aluminium</td>
+                </tr>
+                <tr>
+                  <td>Type</td>
+                  <td>Injection / Press Mould</td>
+                </tr>
+                <tr>
+                  <td>Size Range</td>
+                  <td>UK 1 – UK 13</td>
+                </tr>
+                <tr>
+                  <td>Finish</td>
+                  <td>High-gloss / Pattern Embossed</td>
+                </tr>
+                <tr>
+                  <td>Lead Time</td>
+                  <td>20 – 30 days</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <!-- Sole Die Cut -->
+          <div class="bento-card reveal reveal-delay-2" style="padding:0;">
+            <div class="product-img-wrap">
+              <img src="/craftsmanship/sole-die-pair-topview-dark.jpeg" alt="Sole Die Cut pair top view"
+                loading="lazy">
+              <div class="product-badge" style="background:var(--text-primary);color:var(--bg-primary);">Industrial
+              </div>
+            </div>
+            <div class="product-body">
+              <h3>Sole Die Cut</h3>
+              <p>Precision die-cutting tools for outsole and midsole profiling. Hardened steel construction for
+                high-volume production durability.</p>
+              <table class="specs-table">
+                <tr>
+                  <td>Material</td>
+                  <td>Hardened Tool Steel</td>
+                </tr>
+                <tr>
+                  <td>Application</td>
+                  <td>Outsole / Midsole Profiling</td>
+                </tr>
+                <tr>
+                  <td>Tolerance</td>
+                  <td>&plusmn; 0.05mm</td>
+                </tr>
+                <tr>
+                  <td>Lifespan</td>
+                  <td>50,000+ cuts</td>
+                </tr>
+                <tr>
+                  <td>Lead Time</td>
+                  <td>5 – 8 days</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <!-- Product CTA card -->
+          <div class="bento-card bento-card-dark product-third reveal reveal-delay-3">
+            <div class="product-img-wrap">
+              <img src="/craftsmanship/sports-sole-mould-closeup.jpeg" alt="Sports sole mould closeup"
+                loading="lazy">
+            </div>
+            <div class="product-body" style="color:#EFF2F5;">
+              <span class="bento-tag-label bento-tag-gold">Custom Orders</span>
+              <h3 style="color:#EFF2F5;">Need a Custom Mould?</h3>
+              <p style="color:rgba(255,255,255,0.7);">We engineer bespoke moulds from your sample, drawing, or concept.
+                Send us a 2D sketch, 3D file (STEP, IGES, STL), or physical sample.</p>
+              <a href="#contact" class="btn-cta btn-cta-lg" style="margin-top:var(--space-md);width:fit-content;">Start
+                Custom Order<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5" stroke-linecap="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase Gallery -->
+    <section id="showcase" class="section">
+      <div class="container">
+        <div class="showcase-header-grid reveal">
+          <div>
+            <div class="section-label">Showcase</div>
+            <div class="section-title">From <span class="accent">Mould</span> to Market</div>
+          </div>
+          <div class="showcase-header-right">
+            <p>The craftsmanship behind the product — and the product in the real world. From raw steel to beach-ready
+              footwear.</p>
+            <a href="#contact" class="showcase-cta">
+              Request Similar Mould
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="gallery-filters reveal">
+          <button class="gallery-filter" data-filter="all">All</button>
+          <button class="gallery-filter active" data-filter="lifestyle">Lifestyle</button>
+          <button class="gallery-filter" data-filter="craftsmanship">Craftsmanship</button>
+          <button class="gallery-filter" data-filter="product">Finished Product</button>
+          <button class="gallery-filter" data-filter="kids">Kids Collection</button>
+        </div>
+
+        <div class="bento-gallery" id="bentoGallery">
+          <div role="button" tabindex="0" aria-label="View: Orange crocs beach lifestyle"
+            class="bento-gallery-item reveal" data-category="lifestyle"
+            data-src="/lifestyle/crocs-orange-beach-lifestyle.jpeg">
+            <img src="/lifestyle/crocs-orange-beach-lifestyle.jpeg" alt="Orange crocs beach lifestyle"
+              loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Beach Ready</div>
+              <div class="bento-caption">Lightweight EVA clog finish</div>
+            </div>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Hot steel mould pouring"
+            class="bento-gallery-item reveal reveal-delay-1" data-category="craftsmanship"
+            data-src="/craftsmanship/hero-mould-hot-steel.jpeg">
+            <img src="/craftsmanship/hero-mould-hot-steel.jpeg" alt="Hot steel mould pouring" loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Raw Craft</div>
+              <div class="bento-caption">High-temperature mould process</div>
+            </div>
+            <span class="gallery-tag">Production Ready</span>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Orange crocs floating on dark"
+            class="bento-gallery-item reveal reveal-delay-2" data-category="product"
+            data-src="/product/crocs-orange-floating-dark.jpeg">
+            <img src="/product/crocs-orange-floating-dark.jpeg" alt="Orange crocs floating on dark"
+              loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Product Shot</div>
+              <div class="bento-caption">Studio-quality finish output</div>
+            </div>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Hot sole mould smoking"
+            class="bento-gallery-item reveal reveal-delay-1" data-category="craftsmanship"
+            data-src="/craftsmanship/mould-hot-sole-smoking.jpeg">
+            <img src="/craftsmanship/mould-hot-sole-smoking.jpeg" alt="Hot sole mould smoking" loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Fresh from the Press</div>
+              <div class="bento-caption">Sole ejection at 180&deg;C</div>
+            </div>
+            <span class="gallery-tag">High Gloss Finish</span>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Yellow crocs beach splash"
+            class="bento-gallery-item reveal reveal-delay-2" data-category="lifestyle"
+            data-src="/lifestyle/crocs-yellow-beach-splash.jpeg">
+            <img src="/lifestyle/crocs-yellow-beach-splash.jpeg" alt="Yellow crocs beach splash" loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Summer Vibes</div>
+              <div class="bento-caption">Water-resistant EVA compound</div>
+            </div>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: White crocs poolside"
+            class="bento-gallery-item reveal reveal-delay-3" data-category="lifestyle"
+            data-src="/lifestyle/crocs-white-poolside-lifestyle.jpeg">
+            <img src="/lifestyle/crocs-white-poolside-lifestyle.jpeg" alt="White crocs poolside" loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Poolside</div>
+              <div class="bento-caption">Non-slip sole tread design</div>
+            </div>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Yellow crocs splash closeup"
+            class="bento-gallery-item reveal reveal-delay-4" data-category="lifestyle"
+            data-src="/lifestyle/crocs-yellow-beach-splash-2.jpeg">
+            <img src="/lifestyle/crocs-yellow-beach-splash-2.jpeg" alt="Yellow crocs splash closeup"
+              loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">In Action</div>
+              <div class="bento-caption">Durability meets lifestyle</div>
+            </div>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Sole tread pattern macro closeup"
+            class="bento-gallery-item reveal" data-category="craftsmanship"
+            data-src="/craftsmanship/sole-tread-closeup-dark.jpeg">
+            <img src="/craftsmanship/sole-tread-closeup-dark.jpeg" alt="Sole tread pattern macro closeup"
+              loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Tread Detail</div>
+              <div class="bento-caption">Precision sole texture definition</div>
+            </div>
+            <span class="gallery-tag">Precision CNC</span>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: CNC mould machining golden light"
+            class="bento-gallery-item reveal reveal-delay-1" data-category="craftsmanship"
+            data-src="/craftsmanship/mould-cnc-machining-golden.jpeg">
+            <img src="/craftsmanship/mould-cnc-machining-golden.jpeg" alt="CNC mould machining golden light"
+              loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">CNC Precision</div>
+              <div class="bento-caption">Multi-axis aluminium machining</div>
+            </div>
+            <span class="gallery-tag">Multi-Cavity</span>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Five pairs of crocs arranged in hemisphere"
+            class="bento-gallery-item reveal reveal-delay-2" data-category="product"
+            data-src="/product/crocs-5-colors-hemisphere.jpeg">
+            <img src="/product/crocs-5-colors-hemisphere.jpeg" alt="Five pairs of crocs arranged in hemisphere"
+              loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Every Color, One Mould</div>
+              <div class="bento-caption">Scalable design consistency across colorways</div>
+            </div>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Navy blue clog on dark background"
+            class="bento-gallery-item reveal reveal-delay-3" data-category="product"
+            data-src="/product/navy-clog-dark-hero.jpeg">
+            <img src="/product/navy-clog-dark-hero.jpeg" alt="Navy blue clog on dark background" loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Navy Stealth</div>
+              <div class="bento-caption">Matte EVA finish in deep navy</div>
+            </div>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Three clogs on minimalist shelf"
+            class="bento-gallery-item reveal reveal-delay-4" data-category="product"
+            data-src="/product/trio-shelf-editorial.jpeg">
+            <img src="/product/trio-shelf-editorial.jpeg" alt="Three clogs on minimalist shelf" loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Editorial Display</div>
+              <div class="bento-caption">Black, white &amp; olive — retail ready</div>
+            </div>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Pink kids clog with unicorn charms on dark background"
+            class="bento-gallery-item reveal" data-category="kids" data-src="/kids/kids-pink-unicorn-dark.jpeg">
+            <img src="/kids/kids-pink-unicorn-dark.jpeg"
+              alt="Pink kids clog with unicorn charms on dark background" loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Unicorn Dreams</div>
+              <div class="bento-caption">Kids EVA clog with character charms</div>
+            </div>
+            <span class="bento-tag">Kids Collection</span>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Toddler wearing blue clogs on playground"
+            class="bento-gallery-item reveal reveal-delay-1" data-category="kids"
+            data-src="/kids/kids-blue-playground-lifestyle.jpeg">
+            <img src="/kids/kids-blue-playground-lifestyle.jpeg" alt="Toddler wearing blue clogs on playground"
+              loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Playground Ready</div>
+              <div class="bento-caption">Durable EVA for active kids</div>
+            </div>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Mint kids clogs flat lay with toys and crayons"
+            class="bento-gallery-item reveal reveal-delay-3" data-category="kids"
+            data-src="/kids/kids-mint-flatlay-toys.jpeg">
+            <img src="/kids/kids-mint-flatlay-toys.jpeg" alt="Mint kids clogs flat lay with toys and crayons"
+              loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Tiny Adventures</div>
+              <div class="bento-caption">Lightweight EVA for little explorers</div>
+            </div>
+          </div>
+          <div role="button" tabindex="0" aria-label="View: Three character themed kids clogs - red pink green"
+            class="bento-gallery-item reveal reveal-delay-4" data-category="kids"
+            data-src="/kids/kids-trio-character-themed.jpeg">
+            <img src="/kids/kids-trio-character-themed.jpeg"
+              alt="Three character themed kids clogs - red pink green" loading="lazy">
+            <div class="bento-info">
+              <div class="bento-title">Character Collection</div>
+              <div class="bento-caption">Princess, Superhero &amp; Dino themes</div>
+            </div>
+            <span class="bento-tag">New Arrival</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+      <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+      <img class="lightbox-img" id="lightboxImg" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+        alt="">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- Process -->
+    <section id="process" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label reveal">Our Process</div>
+          <div class="section-title reveal reveal-delay-1">From Concept to <span class="accent">Delivery</span></div>
+          <div class="section-subtitle reveal reveal-delay-2">A streamlined, transparent workflow designed around your
+            production schedule.</div>
+        </div>
+        <div class="bento-grid process-bento">
+          <div class="bento-card process-card reveal">
+            <div class="process-number">01</div>
+            <h4>Enquiry &amp; Consultation</h4>
+            <p>Share your requirements — product type, size range, volume, and timeline. Our team reviews feasibility
+              and provides a detailed quotation within 24 hours.</p>
+          </div>
+          <div class="bento-card process-card reveal reveal-delay-1">
+            <div class="process-number">02</div>
+            <h4>Design &amp; Engineering</h4>
+            <p>Our CAD team creates precise 3D mould designs based on your specifications. You receive digital previews
+              and detailed technical drawings for approval.</p>
+          </div>
+          <div class="bento-card bento-card-image process-card-image reveal reveal-delay-2">
+            <img src="/craftsmanship/mould-cnc-wet-closeup.jpeg" alt="CNC mould machining closeup" loading="lazy">
+            <div class="process-image-overlay"></div>
+            <div class="process-image-content">
+              <div
+                style="font-family:var(--font-display);font-size:var(--text-4xl);line-height:1;color:var(--mint);margin-bottom:var(--space-xs);">
+                03</div>
+              <h4>Manufacturing</h4>
+              <p>CNC machining, EDM, and hand finishing — every mould goes through our rigorous multi-stage production
+                process with in-process quality checks.</p>
+            </div>
+          </div>
+          <div class="bento-card bento-card-image process-card-image reveal reveal-delay-3">
+            <img src="/craftsmanship/manufacturing-green-croc-hot.jpeg" alt="Hot mould manufacturing process"
+              loading="lazy">
+            <div class="process-image-overlay"></div>
+            <div class="process-image-content">
+              <div
+                style="font-family:var(--font-display);font-size:var(--text-4xl);line-height:1;color:var(--gold);margin-bottom:var(--space-xs);">
+                04</div>
+              <h4>Quality Check &amp; Delivery</h4>
+              <p>Final inspection, trial shots, and dimensional verification before dispatch. Worldwide shipping with
+                full insurance and post-delivery support.</p>
+            </div>
+          </div>
+          <div class="bento-card process-card reveal reveal-delay-4">
+            <div class="process-number" style="color:var(--mint);">24h</div>
+            <h4>Quick Response</h4>
+            <p>Quotations within 24 hours. Custom design consultation available for complex requirements.</p>
+          </div>
+          <div class="bento-card bento-card-dark process-card reveal reveal-delay-5"
+            style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.5"
+              stroke-linecap="round" style="margin-bottom:var(--space-sm);">
+              <path d="M9 12l2 2 4-4" />
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+            <div style="font-family:var(--font-display);font-size:var(--text-xl);letter-spacing:0.04em;">100% QC</div>
+            <div class="bento-stat-label">Every Mould Inspected</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries -->
+    <section id="industries" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label reveal">Industries Served</div>
+          <div class="section-title reveal reveal-delay-1">Moulds for Every <span class="accent">Market</span></div>
+          <div class="section-subtitle reveal reveal-delay-2">Trusted by manufacturers across India &amp; worldwide in
+            the footwear
+            segments.</div>
+        </div>
+        <div class="bento-grid industries-bento">
+          <div class="bento-card industry-card-inner industry-featured reveal" style="padding:0;">
+            <div class="industry-img-wrap"><img src="/product/crocs-colorful-wet-display.jpeg"
+                alt="Colorful crocs-style footwear" loading="lazy"></div>
+            <div class="industry-body">
+              <h4>Crocs-Style Footwear</h4>
+              <p>Injection moulds &amp; press moulds for clogs, slides, and perforated casual footwear — the
+                fastest-growing segment in Indian retail. Full-size range coverage with consistent cavity precision.</p>
+            </div>
+          </div>
+          <div class="bento-card industry-card-inner reveal reveal-delay-1" style="padding:0;">
+            <div class="industry-img-wrap"><img src="/product/crocs-black-streetwear-pair.jpeg"
+                alt="Black crocs streetwear pair" loading="lazy"></div>
+            <div class="industry-body">
+              <h4>Daily Wear &amp; Streetwear</h4>
+              <p>Versatile moulds for everyday clogs and streetwear footwear — built for mass production with premium
+                finish quality.</p>
+            </div>
+          </div>
+          <div class="bento-card industry-card-inner reveal reveal-delay-2" style="padding:0;">
+            <div class="industry-img-wrap"><img src="/craftsmanship/sports-sole-mould-closeup.jpeg"
+                alt="Sports running shoe sole mould" loading="lazy"></div>
+            <div class="industry-body">
+              <h4>Sports Footwear</h4>
+              <p>Lightweight midsole and outsole moulds optimized for athletic performance — running, training, and
+                court sports.</p>
+            </div>
+          </div>
+          <div class="bento-card industry-card-inner reveal reveal-delay-3" style="padding:0;">
+            <div class="industry-img-wrap"><img src="/product/slide-white-minimal.jpeg"
+                alt="White industrial slide" loading="lazy"></div>
+            <div class="industry-body">
+              <h4>Industrial Safety</h4>
+              <p>Heavy-duty moulds for steel-toe and industrial safety footwear — built to meet BIS and international
+                compliance standards.</p>
+            </div>
+          </div>
+          <div class="bento-card bento-card-accent reveal reveal-delay-4"
+            style="display:flex;flex-direction:column;justify-content:center;text-align:center;">
+            <div
+              style="font-family:var(--font-display);font-size:var(--text-2xl);letter-spacing:0.04em;margin-bottom:var(--space-xs);">
+              Your Segment?</div>
+            <p class="bento-card-text" style="margin-bottom:var(--space-md);">We engineer custom moulds for any footwear
+              category.</p>
+            <a href="#contact" class="btn-cta" style="align-self:center;">Discuss Requirements</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality & Trust -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label reveal">Quality Standards</div>
+          <div class="section-title reveal reveal-delay-1">Engineering <span class="gold">Trust</span> Into Every Mould
+          </div>
+          <div class="section-subtitle reveal reveal-delay-2">Rigorous quality control at every stage ensures moulds
+            that perform flawlessly across production runs.</div>
+        </div>
+        <div class="bento-grid quality-bento">
+          <div class="bento-card bento-card-gold quality-hero reveal">
+            <div class="quality-badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg></div>
+            <div class="bento-card-title">Material Integrity</div>
+            <p class="bento-card-text" style="margin:var(--space-md) 0;">Every mould is manufactured with certified
+              materials — aircraft-grade aluminium, hardened tool steel, and premium alloys sourced from verified
+              suppliers.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin-top:auto;">
+              <div>
+                <div style="font-family:var(--font-display);font-size:var(--text-xl);color:var(--gold);">Aircraft-Grade
+                </div>
+                <div class="bento-stat-label">Aluminium</div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-display);font-size:var(--text-xl);color:var(--gold);">Hardened</div>
+                <div class="bento-stat-label">Tool Steel</div>
+              </div>
+            </div>
+          </div>
+          <div class="bento-card reveal reveal-delay-1"
+            style="display:flex;flex-direction:column;justify-content:center;text-align:center;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.5"
+              stroke-linecap="round" style="margin:0 auto var(--space-sm);">
+              <path d="M9 12l2 2 4-4" />
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+            <div style="font-family:var(--font-display);font-size:var(--text-xl);letter-spacing:0.04em;">Dimensional
+            </div>
+            <div class="bento-stat-label">Verification</div>
+          </div>
+          <div class="bento-card reveal reveal-delay-2"
+            style="display:flex;flex-direction:column;justify-content:center;text-align:center;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+              stroke-linecap="round" style="margin:0 auto var(--space-sm);">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            <div style="font-family:var(--font-display);font-size:var(--text-xl);letter-spacing:0.04em;">Trial Shots
+            </div>
+            <div class="bento-stat-label">Before Dispatch</div>
+          </div>
+          <div class="bento-card bento-card-dark reveal reveal-delay-3"
+            style="display:flex;flex-direction:column;justify-content:center;text-align:center;">
+            <div style="font-family:var(--font-display);font-size:var(--text-4xl);line-height:1;color:var(--mint);"
+              data-count="50000" data-suffix="+">0+</div>
+            <div class="bento-stat-label">Cycle Lifespan</div>
+            <p class="bento-card-text" style="margin-top:var(--space-sm);font-size:var(--text-xs);">Built to last across
+              high-volume production runs</p>
+          </div>
+          <div class="bento-card reveal reveal-delay-4">
+            <div class="pillar-icon" style="background:var(--gold-glow);border-color:var(--border-gold);"><svg
+                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"
+                stroke-linecap="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg></div>
+            <div class="pillar-title">CAD-Verified</div>
+            <p class="pillar-text">3D designs reviewed and verified before machining begins. Digital previews ensure
+              alignment before we cut metal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header-center">
+          <div class="section-label reveal">Capabilities</div>
+          <div class="section-title reveal reveal-delay-1">Materials &amp; <span class="accent">Tooling Expertise</span>
+          </div>
+          <div class="section-subtitle reveal reveal-delay-2">Full-spectrum mould engineering — from material selection
+            to final surface finish.</div>
+        </div>
+        <div class="bento-grid capabilities-bento">
+          <div class="bento-card capability-card reveal">
+            <span class="bento-tag-label">Best Seller</span>
+            <h4>EVA Bond Mould</h4>
+            <div class="capability-spec"><span class="capability-spec-label">Material</span><span
+                class="capability-spec-value">Aluminium Alloy / Mild Steel</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Cavity</span><span
+                class="capability-spec-value">Single / Multi-cavity</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Size Range</span><span
+                class="capability-spec-value">UK 3 – UK 12</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Finish</span><span
+                class="capability-spec-value">Mirror / Matte / Textured</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Tolerance</span><span
+                class="capability-spec-value">&plusmn; 0.1mm</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Lead Time</span><span
+                class="capability-spec-value">7 – 12 days</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Production</span><span
+                class="capability-spec-value">50,000+ cycles</span></div>
+          </div>
+          <div class="bento-card bento-card-accent capability-card reveal reveal-delay-1">
+            <span class="bento-tag-label bento-tag-gold">Premium</span>
+            <h4>Full EVA Mould</h4>
+            <div class="capability-spec"><span class="capability-spec-label">Material</span><span
+                class="capability-spec-value">6082 Grade Aluminium</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Type</span><span
+                class="capability-spec-value">Injection / Press Mould</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Size Range</span><span
+                class="capability-spec-value">UK 1 – UK 13</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Finish</span><span
+                class="capability-spec-value">High-gloss / Pattern Embossed</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Tolerance</span><span
+                class="capability-spec-value">&plusmn; 0.08mm</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Lead Time</span><span
+                class="capability-spec-value">20 – 30 days</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Production</span><span
+                class="capability-spec-value">30,000+ cycles</span></div>
+          </div>
+          <div class="bento-card bento-card-dark capability-card reveal reveal-delay-2">
+            <span class="bento-tag-label" style="background:rgba(255,255,255,0.1);color:#EFF2F5;">Industrial</span>
+            <h4>Sole Die Cut</h4>
+            <div class="capability-spec"><span class="capability-spec-label">Material</span><span
+                class="capability-spec-value">Hardened Tool Steel</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Application</span><span
+                class="capability-spec-value">Progressive Die</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Size Range</span><span
+                class="capability-spec-value">Custom</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Finish</span><span
+                class="capability-spec-value">Ground / Polished</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Tolerance</span><span
+                class="capability-spec-value">&plusmn; 0.05mm</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Lead Time</span><span
+                class="capability-spec-value">5 – 8 days</span></div>
+            <div class="capability-spec"><span class="capability-spec-label">Production</span><span
+                class="capability-spec-value">50,000+ cuts</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section-alt">
+      <div class="container">
+        <div class="section-header section-header-center">
+          <div class="section-label reveal">FAQ</div>
+          <div class="section-title reveal reveal-delay-1">Common <span class="accent">Questions</span></div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-question">What is the minimum order quantity?<span class="faq-icon"></span></button>
+            <div class="faq-answer">
+              <p>We accept orders starting from a single mould. Whether you need 1 prototype mould or 50 production
+                sets, we handle both with the same precision and commitment.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal reveal-delay-1">
+            <button class="faq-question">How long does it take to get a quotation?<span
+                class="faq-icon"></span></button>
+            <div class="faq-answer">
+              <p>We provide detailed quotations within 24 hours of receiving your specifications. For complex or custom
+                projects, we may schedule a brief consultation call first.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal reveal-delay-2">
+            <button class="faq-question">Do you ship outside India?<span class="faq-icon"></span></button>
+            <div class="faq-answer">
+              <p>Yes — we deliver worldwide. We ship moulds globally via insured transport with secure wooden
+                packaging. Most orders reach within 3-5 business days of dispatch.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal reveal-delay-3">
+            <button class="faq-question">Can you make moulds from our sample or drawing?<span
+                class="faq-icon"></span></button>
+            <div class="faq-answer">
+              <p>Absolutely. Send us a physical sample, a 2D drawing, or even a rough sketch — our CAD team will
+                engineer a production-ready mould design from it. We also accept 3D files (STEP, IGES, STL).</p>
+            </div>
+          </div>
+          <div class="faq-item reveal reveal-delay-4">
+            <button class="faq-question">What after-sales support do you provide?<span class="faq-icon"></span></button>
+            <div class="faq-answer">
+              <p>We provide free technical support for all moulds. If a mould needs adjustment, reworking, or has a
+                manufacturing defect, we address it at no additional cost within the warranty period.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner-grid reveal-scale">
+          <div class="cta-main">
+            <h2>Ready to Start Your Next Project?</h2>
+            <p>Get a detailed quotation within 24 hours. Custom design consultation available for complex requirements.
+            </p>
+            <div class="cta-banner-btns">
+              <a href="#contact" class="btn-dark">
+                Get Quote
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="https://wa.me/919310793473" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+                WhatsApp Us
+              </a>
+            </div>
+          </div>
+          <div class="cta-side">
+            <img src="/product/product-mould-and-croc-luxury-display.jpeg" alt="Premium mould and croc display"
+              loading="lazy">
+            <div class="cta-side-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label reveal">Get In Touch</div>
+          <div class="section-title reveal reveal-delay-1">Let's Build Your <span class="accent">Next Mould</span></div>
+          <div class="section-subtitle reveal reveal-delay-2">Send us your requirements and we'll get back to you within
+            24 hours with a detailed quotation.</div>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info-block reveal-left">
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg></div>
+              <div>
+                <h4>Factory Address</h4>
+                <p>Basement, House No. 12, Block BA,<br>Peeragarhi Bridge, Mangolpuri<br>Industrial Area Phase-2, New
+                  Delhi-110034</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                </svg></div>
+              <div>
+                <h4>Phone</h4>
+                <p><a href="tel:+919310793473">+91 93107 93473</a></p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg></div>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:classic786moulds@gmail.com">classic786moulds@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                </svg></div>
+              <div>
+                <h4>Proprietor</h4>
+                <p>Sheikh Sikander</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg></div>
+              <div>
+                <h4>GST Number</h4>
+                <p>07BALPS8931E1ZB</p>
+              </div>
+            </div>
+            <div
+              style="margin-top:var(--space-md);border-radius:var(--radius-md);overflow:hidden;border:3px solid var(--mint);box-shadow:var(--shadow-sm);">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3914.826404649965!2d77.09680507550277!3d28.68662797563526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDQxJzExLjkiTiA3N8KwMDUnNTcuOCJF!5e1!3m2!1sen!2sin!4v1774803750524!5m2!1sen!2sin"
+                width="100%" height="440" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Maps - S.S. Classic Mould & Dies factory location"></iframe>
+            </div>
+          </div>
+          <div class="reveal-right">
+            <form class="contact-form" id="contactForm" action="/api/contact" method="POST">
+              <div class="form-row">
+                <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name"
+                    autocomplete="name" placeholder="Your name" required></div>
+                <div class="form-group"><label for="company">Company</label><input type="text" id="company"
+                    name="company" autocomplete="organization" placeholder="Company name"></div>
+              </div>
+              <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email"
+                  autocomplete="email" placeholder="your@email.com" required></div>
+              <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone"
+                  autocomplete="tel" placeholder="+91 XXXXX XXXXX" pattern="[\+]?[0-9\s\-]{7,15}"
+                  title="Enter a valid phone number (7-15 digits)" required></div>
+              <div class="form-group">
+                <label for="product">Product Interest</label>
+                <select id="product" name="product" autocomplete="off" required>
+                  <option value="" disabled selected>Select a product</option>
+                  <option value="EVA Bond Mould">EVA Bond Mould</option>
+                  <option value="Full EVA Mould">Full EVA Mould</option>
+                  <option value="Sole Die Cut">Sole Die Cut</option>
+                  <option value="Custom Footwear Dies">Custom Footwear Dies</option>
+                  <option value="Other">Other / Not Sure</option>
+                </select>
+              </div>
+              <div class="form-group"><label for="message">Message</label><textarea id="message" name="message"
+                  autocomplete="off" placeholder="Tell us about your requirements — size range, quantity, timeline..."
+                  rows="4"></textarea></div>
+              <button type="submit" class="btn-submit">Send Enquiry</button>
+              <p
+                style="text-align:center;margin-top:var(--space-sm);font-size:var(--text-xs);color:var(--text-muted);letter-spacing:0.05em;">
+                Quotation within 24 hours &bull; Custom design consultation available</p>
+            </form>
+            <div class="form-success" id="formSuccess">
+              <div class="form-success-icon">&#10003;</div>
+              <h3>Enquiry Sent!</h3>
+              <p>Thank you for reaching out. Our team will contact you within 24 hours with a detailed quotation.</p>
+              <div class="form-success-details" id="enquirySummary"></div>
+              <button type="button" class="btn-cta btn-cta-lg" id="formReset" style="margin-top:var(--space-md);">Send
+                Another Enquiry</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-brand-name">S.S. Classic Mould &amp; Dies</div>
+          <div class="footer-brand-tagline">Manufacturers of All Kinds of Footwear Mould</div>
+          <p>Over 25 years of precision engineering, delivering world-class footwear moulds from the heart of Delhi's
+            industrial hub to manufacturers across India &amp; worldwide.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <a href="#about">About Us</a><a href="#products">Products</a><a href="#showcase">Showcase</a><a
+            href="#process">Our Process</a><a href="#industries">Industries</a><a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="#products">EVA Bond Moulds</a><a href="#products">Full EVA Moulds</a><a href="#products">Sole Die
+            Cuts</a><a href="#products">Custom Dies</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">&copy; 2026 S.S. Classic Mould &amp; Dies. All rights reserved.</div>
+        <div class="footer-made">Crafted with precision in New Delhi, India</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/919310793473" target="_blank" rel="noopener noreferrer" class="whatsapp-btn"
+    aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <!-- Sticky CTA (mobile only) -->
+  <div class="sticky-cta">
+    <a href="#contact" class="btn-cta btn-cta-lg">Get Quote</a>
+    <a href="https://wa.me/919310793473" target="_blank" rel="noopener noreferrer" class="btn-cta btn-cta-lg"
+      style="background:#25D366;border:none;">WhatsApp</a>
+  </div>
+
