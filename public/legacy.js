@@ -537,7 +537,8 @@
           email: (fd.get('email') || '').toString().trim(),
           phone: (fd.get('phone') || '').toString().trim(),
           product: (fd.get('product') || '').toString().trim(),
-          message: (fd.get('message') || '').toString().trim()
+          message: (fd.get('message') || '').toString().trim(),
+          website: (fd.get('website') || '').toString() // honeypot — humans leave blank
         };
         fetch('/api/contact', {
           method: 'POST',

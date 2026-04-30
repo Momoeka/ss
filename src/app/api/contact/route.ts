@@ -17,6 +17,7 @@ type Body = {
   phone?: string;
   product?: string;
   message?: string;
+  website?: string; // honeypot — humans must leave blank
 };
 
 export async function POST(req: Request) {
@@ -28,6 +29,13 @@ export async function POST(req: Request) {
     const phone = (body.phone ?? "").trim();
     const product = (body.product ?? "").trim();
     const message = (body.message ?? "").trim();
+    const honeypot = (body.website ?? "").trim();
+
+    // Honeypot: bots fill every field. Pretend success without forwarding so
+    // they don't learn they were blocked and adjust.
+    if (honeypot) {
+      return NextResponse.json({ success: true, persisted: false });
+    }
 
     if (!name || !email || !phone || !product) {
       return NextResponse.json(
