@@ -214,12 +214,19 @@
       scrollbar-color: var(--mint-dark) var(--bg-primary);
     }
 
+    html {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
     body {
       font-family: var(--font-body);
       background: var(--bg-primary);
       color: var(--text-primary);
       line-height: 1.6;
       overflow-x: hidden;
+      max-width: 100vw;
+      position: relative;
       -webkit-font-smoothing: antialiased;
     }
 
