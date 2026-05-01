@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { siteConfig } from "@/lib/siteConfig";
+import ChatBot from "@/components/ChatBot";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -266,6 +267,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <ChatBot />
         <Script src="/legacy.js" strategy="afterInteractive" />
       </body>
     </html>
