@@ -6,43 +6,123 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Premium Footwear Mould Manufacturers`,
+    default: `${siteConfig.name} — Footwear Mould & Die Manufacturers in Delhi, India`,
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    "S.S. Classic Mould & Dies — Leading manufacturers of EVA Bond Moulds, Full EVA Moulds, Sole Die Cuts & Custom Footwear Dies in New Delhi, India. 25+ years of precision engineering.",
+    "India's leading footwear mould manufacturer in Delhi NCR — EVA bond moulds, full EVA injection moulds, sole die cuts & crocs-style custom dies. Precision engineering since 2000. Quotation in 24 hours.",
+  applicationName: siteConfig.name,
   keywords: [
+    // Primary product keywords
     "footwear mould manufacturer",
+    "footwear mould manufacturer India",
+    "footwear mould manufacturer Delhi",
+    "shoe mould manufacturer",
+    "shoe mould maker India",
+    "EVA mould",
+    "EVA mould manufacturer",
     "EVA mould Delhi",
-    "crocs mould India",
-    "sole die cut",
-    "footwear dies",
-    "shoe mould maker",
+    "EVA mould India",
     "EVA bond mould",
+    "EVA bond mould manufacturer",
+    "full EVA mould",
+    "full EVA injection mould",
+    "EVA injection mould India",
+    "EVA midsole mould",
+    // Crocs / clogs
+    "crocs mould",
+    "crocs mould manufacturer",
+    "crocs mould India",
+    "crocs style mould",
+    "clog mould manufacturer",
+    "EVA clog mould",
+    // Sole / die
+    "sole die cut",
+    "sole die manufacturer",
+    "sole die manufacturer India",
+    "sole cutting die",
+    "outsole die",
+    "midsole die",
+    "footwear die manufacturer",
+    "shoe die maker",
+    "footwear dies",
+    "custom footwear dies",
+    "custom shoe mould",
+    // Material / process
+    "aluminium footwear mould",
+    "aluminium alloy mould",
+    "hardened steel sole die",
+    "precision shoe mould",
+    "multi-cavity EVA mould",
+    "press mould footwear",
+    // Industry / supply
+    "OEM footwear mould India",
+    "footwear tooling India",
+    "footwear manufacturer supplier",
+    "shoe industry supplier Delhi",
+    "footwear factory equipment",
+    // Local SEO
+    "mould manufacturer Mangolpuri",
+    "mould manufacturer Peeragarhi",
+    "footwear mould Delhi NCR",
+    "shoe mould New Delhi",
+    "footwear tooling North India",
+    // Brand
     "S.S. Classic Mould",
+    "S.S. Classic Mould & Dies",
+    "SS Classic moulds",
+    "Sheikh Sikander mould",
   ],
   authors: [{ name: siteConfig.name }],
-  robots: { index: true, follow: true },
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "Manufacturing",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   alternates: { canonical: siteConfig.url },
   openGraph: {
-    title: `${siteConfig.name} — Premium Footwear Mould Manufacturers`,
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} — Footwear Mould & Die Manufacturers, Delhi`,
     description:
-      "25+ years engineering precision EVA moulds, crocs-style dies & complete footwear solutions from Delhi, India.",
+      "India's leading footwear mould manufacturer — EVA, crocs-style & sole dies. 25+ years precision engineering. Get a quote in 24 hours.",
     url: siteConfig.url,
     type: "website",
     locale: "en_IN",
-    images: [{ url: siteConfig.ogImage }],
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "S.S. Classic Mould & Dies — Premium footwear mould display",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description:
-      "India's precision mould engineers — EVA, crocs-style & sole dies since 2000.",
+      "India's precision footwear mould engineers — EVA, crocs-style & sole dies since 2000.",
     images: [siteConfig.ogImage],
   },
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
+  },
+  other: {
+    "geo.region": "IN-DL",
+    "geo.placename": "New Delhi",
+    "geo.position": "28.6867;77.0994",
+    ICBM: "28.6867, 77.0994",
+    "DC.title": siteConfig.name,
   },
 };
 
@@ -57,28 +137,110 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ManufacturingBusiness",
+  "@type": ["LocalBusiness", "ManufacturingBusiness"],
+  "@id": `${siteConfig.url}/#business`,
   name: siteConfig.name,
-  description: "Manufacturers of All Kinds of Footwear Mould",
+  legalName: "S.S. Classic Mould & Dies",
+  alternateName: ["SS Classic Mould", "S.S. Classic Moulds"],
+  description:
+    "India's leading footwear mould manufacturer — EVA bond moulds, full EVA injection moulds, sole die cuts and custom crocs-style dies. Precision engineering since 2000.",
+  slogan: "Manufacturers of All Kinds of Footwear Mould",
   url: siteConfig.url,
-  telephone: [siteConfig.phone],
+  logo: `${siteConfig.url}/logo.png`,
+  image: siteConfig.ogImage,
+  telephone: siteConfig.phone,
   email: siteConfig.email,
+  priceRange: "₹₹",
   address: {
     "@type": "PostalAddress",
     streetAddress: siteConfig.address.streetAddress,
     addressLocality: siteConfig.address.locality,
+    addressRegion: "Delhi",
     postalCode: siteConfig.address.postalCode,
     addressCountry: siteConfig.address.country,
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 28.6867,
+    longitude: 77.0994,
+  },
   founder: { "@type": "Person", name: siteConfig.founder },
   foundingDate: siteConfig.foundingYear,
-  areaServed: "IN",
-  makesOffer: [
-    { "@type": "Offer", itemOffered: { "@type": "Product", name: "EVA Bond Moulds" } },
-    { "@type": "Offer", itemOffered: { "@type": "Product", name: "Full EVA Moulds" } },
-    { "@type": "Offer", itemOffered: { "@type": "Product", name: "Sole Die Cuts" } },
-    { "@type": "Offer", itemOffered: { "@type": "Product", name: "Custom Footwear Dies" } },
+  areaServed: [
+    { "@type": "Country", name: "India" },
+    { "@type": "AdministrativeArea", name: "Delhi NCR" },
+    { "@type": "AdministrativeArea", name: "North India" },
   ],
+  knowsAbout: [
+    "Footwear Mould Manufacturing",
+    "EVA Bond Mould",
+    "Full EVA Injection Mould",
+    "Sole Die Cutting",
+    "Crocs-style Mould Engineering",
+    "Custom Footwear Tooling",
+    "CNC Mould Machining",
+    "Aluminium Alloy Moulds",
+    "Hardened Steel Dies",
+  ],
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Product",
+        name: "EVA Bond Mould",
+        description:
+          "High-density EVA bond moulds engineered for superior bonding, consistent cell structure, and excellent compression set resistance.",
+        category: "Footwear Tooling",
+        brand: { "@type": "Brand", name: siteConfig.name },
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Product",
+        name: "Full EVA Mould",
+        description:
+          "Complete EVA injection moulds for full-shoe production — crocs-style, clogs, and lightweight casual footwear.",
+        category: "Footwear Tooling",
+        brand: { "@type": "Brand", name: siteConfig.name },
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Product",
+        name: "Sole Die Cut",
+        description:
+          "Precision die-cutting tools for outsole and midsole profiling. Hardened steel construction for high-volume production durability.",
+        category: "Footwear Tooling",
+        brand: { "@type": "Brand", name: siteConfig.name },
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Product",
+        name: "Custom Footwear Dies",
+        description:
+          "Bespoke moulds engineered from your sample, drawing, or 3D file (STEP, IGES, STL).",
+        category: "Footwear Tooling",
+        brand: { "@type": "Brand", name: siteConfig.name },
+      },
+    },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Footwear Moulds & Dies",
+    itemListElement: [
+      "EVA Bond Moulds",
+      "Full EVA Moulds",
+      "Sole Die Cuts",
+      "Custom Footwear Dies",
+    ].map((name) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Product", name },
+    })),
+  },
 };
 
 export default function RootLayout({
